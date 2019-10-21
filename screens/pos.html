@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Punto de venta</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/iconsmind-s/css/iconsminds.css">
+    <link rel="stylesheet" href="fonts/simple-line-icons/css/simple-line-icons.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <header>
+        <nav id="nav-pos" class="navbar justify-content-between navbar-expand-md fixed-top navbar-light bg-white">
+            <a class="navbar-brand" href="#">
+                <img src="images/dexpress.png" height="48" alt="Dexpress">
+            </a>
+            <h2 class="navbar-text">
+                Italian Pizza
+            </h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="simple-icon-options-vertical"></span>
+            </button>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            <i class="iconsminds-maximize"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            <i class="iconsminds-wifi"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="iconsminds-cash-register-2"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="iconsminds-on-off-3"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="simple-icon-lock"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                            <i class="iconsminds-gear-2"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main id="pos" role="main" class="flex-shrink-0">
+        <div class="container-fluid d-flex flex-column h-100">
+            <div class="row flex-shrink-0 h-100">
+                <div id="pos--list" class="d-flex flex-column col-6 col-sm-7 col-md-8 col-lg-9 h-100">
+                    <div class="d-flex py-3">
+                        <button type="button" class="btn btn-white mr-2">
+                            <i class="simple-icon-arrow-left"></i>
+                        </button>
+                        <div class="search flex-grow-1" data-search-path="">
+                            <input name="searchKeyword" id="searchKeyword" placeholder="Buscar producto" type="search"
+                                class="form-control" value="">
+                            <span class="search-icon">
+                                <i class="simple-icon-magnifier"></i>
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-white btn-lg d-none d-md-block ml-2">
+                            <i class="simple-icon-list"></i>
+                        </button>
+                        <button type="button" class="btn btn-white btn-lg d-none d-md-block ml-1">
+                            <i class="simple-icon-grid"></i>
+                        </button>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <div id="grid-list" class="d-none d-md-block">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <!-- Card -->
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card text-white">
+                                            <div class="position-relative">
+                                                <a class="w-40 w-sm-100" href="">
+                                                    <img alt="" src="images/pizza-min.jpg" class="card-img">
+                                                </a>
+                                                <span
+                                                    class="position-absolute badge-top-right badge badge-primary badge-pill">
+                                                    Clasica
+                                                </span>
+                                            </div>
+                                            <div class="card-img-overlay">
+                                                <div class="card-title">Jamón</div>
+                                                <i class="simple-icon-layers"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EOF - Card -->
+                                    <!-- Card -->
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card text-white">
+                                            <div class="position-relative">
+                                                <a class="w-40 w-sm-100" href="">
+                                                    <img alt="" src="images/pizza-min.jpg" class="card-img">
+                                                </a>
+                                                <span
+                                                    class="position-absolute badge-top-right badge badge-primary badge-pill">
+                                                    Clasica
+                                                </span>
+                                            </div>
+                                            <div class="card-img-overlay">
+                                                <div class="card-title">Hawaiana Jamón y queso</div>
+                                                <i class="simple-icon-layers"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EOF - Card -->
+                                    <!-- Card -->
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card text-white">
+                                            <div class="position-relative">
+                                                <a class="w-40 w-sm-100" href="">
+                                                    <img alt="" src="images/pizza-min.jpg" class="card-img">
+                                                </a>
+                                                <span
+                                                    class="position-absolute badge-top-right badge badge-primary badge-pill">
+                                                    Clasica
+                                                </span>
+                                            </div>
+                                            <div class="card-img-overlay">
+                                                <div class="card-title">Pollo con champiñones</div>
+                                                <i class="simple-icon-layers"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EOF - Card -->
+                                    <!-- Card -->
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card text-white">
+                                            <div class="position-relative">
+                                                <a class="w-40 w-sm-100" href="">
+                                                    <img alt="" src="images/pizza-min.jpg" class="card-img">
+                                                </a>
+                                                <span
+                                                    class="position-absolute badge-top-right badge badge-primary badge-pill">
+                                                    Clasica
+                                                </span>
+                                            </div>
+                                            <div class="card-img-overlay">
+                                                <div class="card-title">Margarita</div>
+                                                <p class="text-truncate">Tomate, albahaca y aceite de oliva</p>
+                                                <i class="simple-icon-layers"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EOF - Card -->
+                                    <!-- Card -->
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card text-white">
+                                            <div class="position-relative">
+                                                <a class="w-40 w-sm-100" href="">
+                                                    <img alt="" src="images/pizza-min.jpg" class="card-img">
+                                                </a>
+                                                <span
+                                                    class="position-absolute badge-top-right badge badge-primary badge-pill">
+                                                    Clasica
+                                                </span>
+                                            </div>
+                                            <div class="card-img-overlay">
+                                                <div class="card-title">Napolitana</div>
+                                                <p class="text-truncate">Tomate y orégano</p>
+                                                <i class="simple-icon-layers"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EOF - Card -->
+                                    <!-- Card -->
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card text-white">
+                                            <div class="position-relative">
+                                                <a class="w-40 w-sm-100" href="">
+                                                    <img alt="" src="images/pizza-min.jpg" class="card-img">
+                                                </a>
+                                                <span
+                                                    class="position-absolute badge-top-right badge badge-color-4 badge-pill">
+                                                    Especial
+                                                </span>
+                                            </div>
+                                            <div class="card-img-overlay">
+                                                <div class="card-title">Feliz</div>
+                                                <p class="text-truncate">Maduro, tocineta y queso parmessano</p>
+                                                <i class="simple-icon-layers"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EOF - Card -->
+                                    <!-- Card -->
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card text-white">
+                                            <div class="position-relative">
+                                                <a class="w-40 w-sm-100" href="">
+                                                    <img alt="" src="images/pizza-min.jpg" class="card-img">
+                                                </a>
+                                                <span
+                                                    class="position-absolute badge-top-right badge badge-color-4 badge-pill">
+                                                    Especial
+                                                </span>
+                                            </div>
+                                            <div class="card-img-overlay">
+                                                <div class="card-title">Carcajada</div>
+                                                <p class="text-truncate">Pollo, tomate y tocineta</p>
+                                                <i class="simple-icon-layers"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EOF - Card -->
+                                    <!-- Card -->
+                                    <div class="col-sm-6 col-md-4 col-lg-3">
+                                        <div class="card text-white">
+                                            <div class="position-relative">
+                                                <a class="w-40 w-sm-100" href="">
+                                                    <img alt="" src="images/pizza-min.jpg" class="card-img">
+                                                </a>
+                                                <span
+                                                    class="position-absolute badge-top-right badge badge-color-4 badge-pill">
+                                                    Especial
+                                                </span>
+                                            </div>
+                                            <div class="card-img-overlay">
+                                                <div class="card-title">Jovial</div>
+                                                <p class="text-truncate">Pollo, champiñones y maduro</p>
+                                                <i class="simple-icon-layers"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- EOF - Card -->
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="thumb-list" class="d-md-none">
+                            <!-- List Item -->
+                            <div class="mb-3 col-12 px-0">
+                                <a href="#">
+                                    <div class="d-flex flex-row card">
+                                        <img alt="" src="images/pizza-min.jpg"
+                                            class="list-thumbnail border-0 card-img-left">
+                                        <div class="pl-2">
+                                            <div class="card-body d-flex align-items-center h-100">
+                                                <div class="list-item-heading truncate">Jamón</div>
+                                                <span
+                                                    class="badge badge-secondary badge-pill d-none d-sm-block">Clasica</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- EOF - List Item -->
+                            <!-- List Item -->
+                            <div class="mb-3 col-12 px-0">
+                                <a href="#">
+                                    <div class="d-flex flex-row card">
+                                        <img alt="" src="images/pizza-min.jpg"
+                                            class="list-thumbnail border-0 card-img-left">
+                                        <div class="pl-2">
+                                            <div class="card-body d-flex align-items-center h-100">
+                                                <div class="list-item-heading truncate">Hawaiana Jamón y queso</div>
+                                                <span
+                                                    class="badge badge-secondary badge-pill d-none d-sm-block">Clasica</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- EOF - List Item -->
+                            <!-- List Item -->
+                            <div class="mb-3 col-12 px-0">
+                                <a href="#">
+                                    <div class="d-flex flex-row card">
+                                        <img alt="" src="images/pizza-min.jpg"
+                                            class="list-thumbnail border-0 card-img-left">
+                                        <div class="pl-2">
+                                            <div class="card-body d-flex align-items-center h-100">
+                                                <div class="list-item-heading truncate">Pollo con champiñones</div>
+                                                <span
+                                                    class="badge badge-secondary badge-pill d-none d-sm-block">Clasica</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- EOF - List Item -->
+                            <!-- List Item -->
+                            <div class="mb-3 col-12 px-0">
+                                <a href="#">
+                                    <div class="d-flex flex-row card">
+                                        <img alt="" src="images/pizza-min.jpg"
+                                            class="list-thumbnail border-0 card-img-left">
+                                        <div class="pl-2">
+                                            <div class="card-body d-flex align-items-center h-100">
+                                                <div class="list-item-heading truncate">Tomate, albahaca y aceite de
+                                                    oliva</div>
+                                                <span
+                                                    class="badge badge-secondary badge-pill d-none d-sm-block">Clasica</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- EOF - List Item -->
+                            <!-- List Item -->
+                            <div class="mb-3 col-12 px-0">
+                                <a href="#">
+                                    <div class="d-flex flex-row card">
+                                        <img alt="" src="images/pizza-min.jpg"
+                                            class="list-thumbnail border-0 card-img-left">
+                                        <div class="pl-2">
+                                            <div class="card-body d-flex align-items-center h-100">
+                                                <div class="list-item-heading truncate">Napolitana</div>
+                                                <span
+                                                    class="badge badge-secondary badge-pill d-none d-sm-block">Clasica</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- EOF - List Item -->
+                            <!-- List Item -->
+                            <div class="mb-3 col-12 px-0">
+                                <a href="#">
+                                    <div class="d-flex flex-row card">
+                                        <img alt="" src="images/pizza-min.jpg"
+                                            class="list-thumbnail border-0 card-img-left">
+                                        <div class="pl-2">
+                                            <div class="card-body d-flex align-items-center h-100">
+                                                <div class="list-item-heading truncate">Feliz</div>
+                                                <span
+                                                    class="badge badge-color-4 badge-pill d-none d-sm-block">Especial</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- EOF - List Item -->
+                        </div>
+                    </div>
+                    <div id="nav-categories" class="mt-auto py-3">
+                        <div class="container d-flex justify-content-center">
+                            <span class="font-weight-bold">PIZZAS</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="pos--order" class="col-6 col-sm-5 col-md-4 col-lg-3 h-100">
+                    <div class="container d-flex flex-column">
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">
+                                    <i class="iconsminds-printer"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="iconsminds-repeat"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="iconsminds-tag"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="simple-icon-options"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="order d-flex flex-column flex-grow-1">
+                            <div class="order__item d-flex flex-grow-1">
+                                <img alt="" src="images/pizza-min.jpg">
+                                <div class="d-flex flex-column ml-2">
+                                    <div class="list-item-heading text-truncate">Hawaiana Jamón y queso</div>
+                                    <p class="text-muted mb-1 text-small d-flex justify-content-between">
+                                        <span>1 x Familiar</span>
+                                        <span class="text-dark font-weight-bold">40.000</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="order-tax d-flex justify-content-between">
+                                <p>
+                                    Impuesto
+                                </p>
+                                <span class="mr-0">0</span>
+                            </div>
+                            <div class="order-total d-flex justify-content-between mb-4">
+                                <p>
+                                    Total
+                                </p>
+                                <span class="mr-0">40.000</span>
+                            </div>
+                            <div class="d-flex">
+                                <button class="mb-2 btn btn-secondary btn"><span>Cancelar</span></button>
+                                <button class="ml-2 mb-2 btn btn-success btn-block"><span>Pagar</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
