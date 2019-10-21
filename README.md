@@ -1,5 +1,14 @@
 # Dexpress 2019
+
 Sistema POS - Escuela JavaScript 2019
 
-El objetivo de este sistema es mantener el inventario actualizado de acuerdo con las ventas e ingreso de productos al negocio, optimizar el proceso de facturación para agilizar y mejorar los procesos de negocio, llevar el control de gastos e ingresos del negocio.
+## Objetivo
 
+Realizar un sistema de punto de venta POS en la nube con tecnologia ReactJS y NodeJS
+
+## Propósito
+
+* Sistema de control de ventas
+* Control de inventarios
+* Compras e ingreso de productos
+* Control de gastos e ingresos
