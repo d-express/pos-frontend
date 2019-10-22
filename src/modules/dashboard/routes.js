@@ -1,9 +1,12 @@
+import React from 'react';
+import Dashboard from './layouts/dashboard';
+
 const routes = [
   {
-    path: '/dashboard',
-    exact: false,
-    component: null,
-  },
+    path: ['/dashboard', '/dashboard/sales'],
+    exact: true,
+    children: <Dashboard />,
+  }
 ];
 
 export default routes;
