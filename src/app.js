@@ -1,23 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from './pages/home';
-import Login from './pages/login';
-import Register from './pages/register';
-import PointOfSale from './pages/point-of-sale';
-import Dashboard from './pages/dashboard';
-import NotFound from './pages/not-found';
+import { Provider } from 'react-redux';
+import AppRoute from './app-route';
+import configureStore from './redux/store';
 
-const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/login' component={Login} />
-      <Route exact path='/register' component={Register} />
-      <Route exact path='/pos' component={PointOfSale} />
-      <Route exact path='/dashboard' component={Dashboard} />
-      <Route component={NotFound} />
-    </Switch>
-  </BrowserRouter>
-);
+const App = () => {
+  return (
+    <Provider store={configureStore()}>
+      <AppRoute />
+    </Provider>
+  );
+};
 
 export default App;
