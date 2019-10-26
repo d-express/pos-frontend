@@ -1,11 +1,13 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import Header from '../components/header';
+import Sidebar from '../components/sidebar';
+import Main from './main';
 
 const Dashboard = () => (
   <div>
-    <nav>Header</nav>
-    <div>Sidebar</div>
-    <main>Main</main>
+    <Header />
+    <Sidebar />
+    <Main />
   </div>
 );
 

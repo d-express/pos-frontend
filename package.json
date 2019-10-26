@@ -20,6 +20,7 @@
   "homepage": "https://github.com/wilson-romero/pos#readme",
   "dependencies": {
     "babel-eslint": "^10.0.3",
+    "bootstrap": "^4.3.1",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
@@ -31,6 +32,7 @@
     "react-dom": "^16.10.2",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
+    "reactstrap": "^8.1.1",
     "redux": "^4.0.4"
   },
   "devDependencies": {
