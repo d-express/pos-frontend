@@ -18,7 +18,6 @@ const Login = (props) => {
 
   const handlSubmit = (event) => {
     event.preventDefault();
-    console.log(form)
     props.history.push('/');
   };
 

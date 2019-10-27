@@ -1,32 +1,34 @@
 @import '../variables.scss';
 $border-radious: 30px;
 
-.Login {
+.Register {
   display: flex;
   justify-content: center;
   align-self: center;
   min-height: 100vh;
   min-width: 100vw;
-	background-image: url('../../static/pizza.jpg');
+	background-image: url('../../static/point-of-sale.jpg');
   background-size: cover;
   &__container{
     display: grid;
     grid-template-columns: 1fr 2fr;
     margin: auto;
-    height: 22rem;
+    height: 34rem;
     width: 70%;
     border: 1px solid fade-out($color-oscuro, $amount: 0.5);
     border-radius: $border-radious;
     @extend .sombra;
-    &__logoCliente{
+    &__Info{
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 8%;
       border-radius: $border-radious 0 0 $border-radious;
       background-color: fade-out($color-oscuro, $amount: 0.5);
-      & img{
-        max-width: 160px;
-        max-height: 160px;
+      color: $color-claro;
+      & h2{
+        font-size: 28px !important;
       }
     }
     &__form{
@@ -45,7 +47,7 @@ $border-radious: 30px;
           width: 220px;
         }
       }
-      &__btn{
+      &__accion{
         width: 90%;
         margin-left: 2%;
         margin-top: 5%;
@@ -53,6 +55,10 @@ $border-radious: 30px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        &__acepto{
+          display: flex;
+          align-content: center;
+        }
       }
       & form{
         display: flex;
