@@ -3,10 +3,14 @@
     "name": "pos",
     "alias": "pos.jeffersonaguilar.now.sh",
     "builds": [
-        { "src": "dist/**", "use": "@now/static" }
+        {
+            "src": "package.json",
+            "use": "@now/static-build",
+            "config": { "distDir": "dist" }
+        }
     ],
     "routes": [
-        { "src": "/", "dest": "dist/index.html" },
-        { "src": "/(.+)", "dest": "dist/$1" }
+        { "src": "/", "dest": "index.html" },
+        { "src": "/(.+)", "dest": "$1" }
     ]
 }
