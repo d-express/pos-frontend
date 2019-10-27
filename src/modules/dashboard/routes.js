@@ -1,5 +1,5 @@
 import React from 'react';
-import Dashboard from './layouts/dashboard';
+import Dashboard from './pages/dashboard';
 
 const routes = [
   {
