@@ -3,6 +3,11 @@ $color-segundario: #ef233c;
 $color-contraste: #8d99ae;
 $color-claro: #edf2f4;
 $color-oscuro: #2b2d42;
+$font-family: 'simple-line-icons';
+
+* {
+	margin: 0;
+}
 
 h2 {
 	font-size: 17px !important;
@@ -15,14 +20,21 @@ h2 {
       <input className='FormInput' type='password' />
     </div>*/
 
+.sombra {
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
 .Form {
 	&Container {
 		position: relative;
 	}
 	&Input {
-		height: 30px;
-		border: 1px solid fade-out($color-oscuro, $amount: 0.5);
-		width: 80%;
+		height: 35px;
+		border: 1px solid fade-out($color-oscuro, $amount: 0.8);
+		border-radius: 5px;
+		width: 90%;
 		margin: 2%;
 		padding-left: 2%;
 		&:focus {
@@ -38,11 +50,29 @@ h2 {
 }
 
 .boton {
-	width: 74px ;
-  height: 10px;
-  font-size: 17px;
+	width: 74px;
+	height: 10px;
+	font-size: 17px;
+	width: 100px;
+	height: 30px;
+	font-size: 14px;
+	border: 1px solid $color-claro;
+	border-radius: 10px;
 	&-primario {
-    background-color: $color-primario;
-    color: $color-claro;
+		background-color: $color-primario;
+		color: $color-claro;
+	}
+	&-primario:hover {
+		background-color: $color-segundario;
+		color: $color-claro;
+	}
+}
+
+a {
+	font-size: 14px;
+	text-decoration: none !important;
+	color: $color-oscuro !important;
+	&:hover {
+		color: $color-primario !important;
 	}
 }

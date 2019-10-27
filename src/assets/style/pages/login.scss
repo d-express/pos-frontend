@@ -1,4 +1,5 @@
 @import '../variables.scss';
+$border-radious: 30px;
 
 .Login {
   display: flex;
@@ -11,13 +12,16 @@
   &__container{
     display: grid;
     grid-template-columns: 1fr 2fr;
+    margin: auto;
     height: 22rem;
     width: 65%;
-    margin: auto;
+    border: 1px solid fade-out($color-oscuro, $amount: 0.5);
+    border-radius: $border-radious;
     &__logoCliente{
       display: flex;
       justify-content: center;
       align-items: center;
+      border-radius: $border-radious 0 0 $border-radious;
       background-color: fade-out($color-oscuro, $amount: 0.5);
       & img{
         max-width: 160px;
@@ -25,7 +29,11 @@
       }
     }
     &__form{
+      border-radius: 0 $border-radious $border-radious 0;
       background-color: $color-claro;
+      &__title{
+        margin: 2%;
+      }
       &__logo{
         display: flex;
         justify-content: flex-start;
@@ -35,6 +43,14 @@
           height: 60px;
           width: 220px;
         }
+      }
+      &__btn{
+        width: 90%;
+        margin-left: 2%;
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
       & form{
         display: flex;
