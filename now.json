@@ -1,6 +1,7 @@
 {
     "version": 2,
     "name": "pos",
+    "alias": "dexpress.app",
     "builds": [
         {
             "src": "package.json",
