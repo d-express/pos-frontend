@@ -1,6 +1,7 @@
 {
     "version": 2,
     "name": "pos",
+    "alias": "pos.jeffersonaguilar.now.sh",
     "builds": [
         { "src": "dist/**", "use": "@now/static" }
     ],
