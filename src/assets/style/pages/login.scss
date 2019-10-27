@@ -1,0 +1,45 @@
+@import '../variables.scss';
+
+.Login {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  min-height: 100vh;
+  min-width: 100vw;
+	background-image: url('../../static/pizza.jpg');
+  background-size: cover;
+  &__container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 22rem;
+    width: 65%;
+    margin: auto;
+    &__logoCliente{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: fade-out($color-oscuro, $amount: 0.5);
+      & img{
+        max-width: 160px;
+        max-height: 160px;
+      }
+    }
+    &__form{
+      background-color: $color-claro;
+      &__logo{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 5%;
+        img{
+          height: 60px;
+          width: 220px;
+        }
+      }
+      & form{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

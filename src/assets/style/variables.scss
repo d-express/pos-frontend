@@ -1,0 +1,48 @@
+$color-primario: #d90429;
+$color-segundario: #ef233c;
+$color-contraste: #8d99ae;
+$color-claro: #edf2f4;
+$color-oscuro: #2b2d42;
+
+h2 {
+	font-size: 17px !important;
+}
+
+//estilo Input formularios
+//ejemplo
+/** <div className='FormContainer'>
+      <small className='FormLabel'>Contraseña</small>
+      <input className='FormInput' type='password' />
+    </div>*/
+
+.Form {
+	&Container {
+		position: relative;
+	}
+	&Input {
+		height: 30px;
+		border: 1px solid fade-out($color-oscuro, $amount: 0.5);
+		width: 80%;
+		margin: 2%;
+		padding-left: 2%;
+		&:focus {
+			border: 1px solid fade-out($color-oscuro, $amount: 0.2);
+		}
+	}
+	&Label {
+		background-color: $color-claro;
+		position: absolute;
+		top: 0;
+		left: 5%;
+	}
+}
+
+.boton {
+	width: 74px ;
+  height: 10px;
+  font-size: 17px;
+	&-primario {
+    background-color: $color-primario;
+    color: $color-claro;
+	}
+}
