@@ -47,6 +47,19 @@ h2 {
 		top: 5%;
 		left: 5%;
 	}
+	&Selector{
+		margin: 2%;
+		width: 90%;
+		background: transparent;
+		text-align: center;
+		& option{
+			margin: 1%;
+			text-align: center;
+		}
+		& option:hover{
+			background-color: $color-segundario;
+		}
+	}
 }
 
 .boton {
