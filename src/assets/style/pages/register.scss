@@ -48,16 +48,19 @@ $border-radious: 30px;
         }
       }
       &__accion{
-        width: 90%;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
         margin-left: 2%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        margin-top: 2%;
         &__acepto{
           display: flex;
-          align-content: center;
+          & input{
+            margin-top: 5px;
+            margin-right: 4px;
+          }
+          & p{
+            margin-right: 4px;
+          }
         }
       }
       & form{

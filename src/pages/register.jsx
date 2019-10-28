@@ -17,7 +17,6 @@ const Register = (props) => {
 
   const handlSubmit = (event) => {
     event.preventDefault();
-    console.log(form)
     props.history.push('/');
   };
 
@@ -39,7 +38,7 @@ const Register = (props) => {
             <div className='FormContainer'>
               <small className='FormLabel'>Empresa o negocio</small>
               <input
-                name='negocio'
+                name='empresa'
                 className='FormInput'
                 type='text'
                 onChange={handleInput}
@@ -87,13 +86,13 @@ const Register = (props) => {
               />
             </div>
             <div className='Register__container__form__accion'>
-              <label htmlFor='acepto' className='Register__container__form__accion__acepto'>
-                <input type='checkbox' placeholder='Acepto' id='acepto' name='acepto' required />
-                Estoy de acuerdo con los
-                <Link to='#'>
+              <div className='Register__container__form__accion__acepto'>
+                <input type='checkbox' placeholder='Acepto' name='acepto' required />
+                <p>Estoy de acuerdo con los </p>
+                <Link to='#' className='Register__container__form__accion__link'>
                   <p>términos y condiciones</p>
                 </Link>
-              </label>
+              </div>
               <button className='boton boton-primario' type='submit'>Comenzar</button>
             </div>
           </form>
