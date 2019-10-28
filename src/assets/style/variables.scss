@@ -72,11 +72,11 @@ h2 {
 	border: 1px solid $color-light;
   border-radius: 10px;
   @extend .sombra;
-	&-primario {
+	&-primary {
 		background-color: $color-primary;
 		color: $color-light;
 	}
-	&-primario:hover {
+	&-primary:hover {
 		background-color: $color-secondary;
 		color: $color-light;
 	}

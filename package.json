@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
+    "startIP": "webpack-dev-server --open --mode development --host 192.168.0.82",
     "build": "webpack --mode production"
   },
   "repository": {

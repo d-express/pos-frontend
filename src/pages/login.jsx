@@ -59,7 +59,7 @@ const Login = (props) => {
               <Link to='#'>
                 <p>¿Olvido su contraseña?</p>
               </Link>
-              <button className='boton boton-primario' type='submit'>Inciar Sesión</button>
+              <button className='button button-primary' type='submit'>Inciar Sesión</button>
             </div>
           </form>
         </div>

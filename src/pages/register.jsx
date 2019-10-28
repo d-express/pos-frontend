@@ -93,7 +93,7 @@ const Register = (props) => {
                   <p>términos y condiciones</p>
                 </Link>
               </div>
-              <button className='boton boton-primario' type='submit'>Comenzar</button>
+              <button className='button button-primary' type='submit'>Comenzar</button>
             </div>
           </form>
         </div>
