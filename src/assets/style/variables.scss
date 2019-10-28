@@ -1,8 +1,8 @@
-$color-primario: #d90429;
-$color-segundario: #ef233c;
-$color-contraste: #8d99ae;
-$color-claro: #edf2f4;
-$color-oscuro: #2b2d42;
+$color-primary: #d90429;
+$color-secondary: #ef233c;
+$color-contrast: #8d99ae;
+$color-light: #edf2f4;
+$color-dark: #2b2d42;
 $font-family: 'simple-line-icons';
 
 * {
@@ -21,9 +21,9 @@ h2 {
     </div>*/
 
 .sombra {
-	-webkit-box-shadow: 1px 5px 5px 0px  fade-out($color-oscuro, $amount: 0.8);
-	-moz-box-shadow: 1px 5px 5px 0px  fade-out($color-oscuro, $amount: 0.8);
-	box-shadow: 1px 5px 5px 0px  fade-out($color-oscuro, $amount: 0.8);
+	-webkit-box-shadow: 1px 5px 5px 0px  fade-out($color-dark, $amount: 0.8);
+	-moz-box-shadow: 1px 5px 5px 0px  fade-out($color-dark, $amount: 0.8);
+	box-shadow: 1px 5px 5px 0px  fade-out($color-dark, $amount: 0.8);
 }
 
 .Form {
@@ -32,17 +32,17 @@ h2 {
 	}
 	&Input {
 		height: 35px;
-		border: 1px solid fade-out($color-oscuro, $amount: 0.8);
+		border: 1px solid fade-out($color-dark, $amount: 0.8);
 		border-radius: 5px;
 		width: 90%;
 		margin: 2%;
 		padding-left: 2%;
 		&:focus {
-			border: 1px solid fade-out($color-oscuro, $amount: 0.2);
+			border: 1px solid fade-out($color-dark, $amount: 0.2);
 		}
 	}
 	&Label {
-		background-color: $color-claro;
+		background-color: $color-light;
 		position: absolute;
 		top: 5%;
 		left: 5%;
@@ -57,7 +57,7 @@ h2 {
 			text-align: center;
 		}
 		& option:hover{
-			background-color: $color-segundario;
+			background-color: $color-secondary;
 		}
 	}
 }
@@ -69,23 +69,23 @@ h2 {
 	width: 100px;
 	height: 30px;
 	font-size: 14px;
-	border: 1px solid $color-claro;
+	border: 1px solid $color-light;
   border-radius: 10px;
   @extend .sombra;
 	&-primario {
-		background-color: $color-primario;
-		color: $color-claro;
+		background-color: $color-primary;
+		color: $color-light;
 	}
 	&-primario:hover {
-		background-color: $color-segundario;
-		color: $color-claro;
+		background-color: $color-secondary;
+		color: $color-light;
 	}
 }
 
 a {
 	text-decoration: none !important;
-	color: $color-oscuro !important;
+	color: $color-dark !important;
 	&:hover {
-		color: $color-primario !important;
+		color: $color-primary !important;
 	}
 }

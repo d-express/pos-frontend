@@ -15,7 +15,7 @@ $border-radious: 30px;
     margin: auto;
     height: 34rem;
     width: 70%;
-    border: 1px solid fade-out($color-oscuro, $amount: 0.5);
+    border: 1px solid fade-out($color-dark, $amount: 0.5);
     border-radius: $border-radious;
     @extend .sombra;
     &__Info{
@@ -25,15 +25,15 @@ $border-radious: 30px;
       align-items: center;
       padding: 8%;
       border-radius: $border-radious 0 0 $border-radious;
-      background-color: fade-out($color-oscuro, $amount: 0.5);
-      color: $color-claro;
+      background-color: fade-out($color-dark, $amount: 0.5);
+      color: $color-light;
       & h2{
         font-size: 28px !important;
       }
     }
     &__form{
       border-radius: 0 $border-radious $border-radious 0;
-      background-color: $color-claro;
+      background-color: $color-light;
       &__title{
         margin: 2%;
       }
