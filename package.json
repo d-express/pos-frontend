@@ -7,6 +7,9 @@
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wilson-romero/pos.git"
