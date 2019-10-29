@@ -3,14 +3,14 @@ $color-secondary: #ef233c;
 $color-contrast: #8d99ae;
 $color-light: #edf2f4;
 $color-dark: #2b2d42;
-$font-family: 'simple-line-icons';
+$font-family: "simple-line-icons";
 
 * {
-	margin: 0;
+  margin: 0;
 }
 
 h2 {
-	font-size: 17px !important;
+  font-size: 17px !important;
 }
 
 //estilo Input formularios
@@ -21,55 +21,73 @@ h2 {
     </div>*/
 
 .sombra {
-	-webkit-box-shadow: 1px 5px 5px 0px  fade-out($color-dark, $amount: 0.8);
-	-moz-box-shadow: 1px 5px 5px 0px  fade-out($color-dark, $amount: 0.8);
-	box-shadow: 1px 5px 5px 0px  fade-out($color-dark, $amount: 0.8);
+  -webkit-box-shadow: 1px 5px 5px 0px fade-out($color-dark, $amount: 0.8);
+  -moz-box-shadow: 1px 5px 5px 0px fade-out($color-dark, $amount: 0.8);
+  box-shadow: 1px 5px 5px 0px fade-out($color-dark, $amount: 0.8);
 }
 
 .Form {
-	&Container {
-		position: relative;
-	}
-	&Input {
-		height: 35px;
-		border: 1px solid fade-out($color-dark, $amount: 0.8);
-		border-radius: 5px;
-		width: 90%;
-		margin: 2%;
-		padding-left: 2%;
-		&:focus {
-			border: 1px solid fade-out($color-dark, $amount: 0.2);
+  &Container {
+    position: relative;
+  }
+  &Input {
+    height: 35px;
+    border: 1px solid fade-out($color-dark, $amount: 0.8);
+    border-radius: 5px;
+    width: 90%;
+    margin: 2%;
+    padding-left: 2%;
+    &:focus {
+      border: 1px solid fade-out($color-dark, $amount: 0.2);
+    }
+  }
+  &Label {
+    background-color: $color-light;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+  }
+  &Selector{
+    margin: 1%;
+    width: 90%;
+    background: transparent;
+    text-align: center;
+		border: none;
+		overflow-y: scroll; 
+    & option {
+      margin: 0.5%;
+      text-align: center;
+      border-bottom: 1px solid fade-out($color-dark, $amount: 0.2);
+
+      &:hover {
+        background-color: fade-out($color-secondary, $amount: 0.8);
+      }
 		}
-	}
-	&Label {
-		background-color: $color-light;
-		position: absolute;
-		top: 5%;
-		left: 5%;
-	}
-	&Selector{
-		margin: 2%;
-		width: 90%;
-		background: transparent;
-		text-align: center;
-		& option{
-			margin: 1%;
-			text-align: center;
-		}
-		& option:hover{
-			background-color: $color-secondary;
-		}
-	}
+    &::-webkit-scrollbar{
+        height: 5px;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 30px;
+        height: 5px;
+        background: fade-out($color-secondary, 0.8)
+    
+    }
+    &::-webkit-scrollbar-thumb:hover{
+        display: block;
+        box-shadow: 0 0 2px 1px fade-out($color-secondary, 0.5);
+        background: $color-secondary;
+    }
+  }
 }
 
 .boton {
-	width: 74px;
-	height: 10px;
-	font-size: 17px;
-	width: 100px;
-	height: 30px;
-	font-size: 14px;
-	border: 1px solid $color-light;
+  width: 74px;
+  height: 10px;
+  font-size: 17px;
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  border: 1px solid $color-light;
   border-radius: 10px;
   @extend .sombra;
 	&-primary {
@@ -83,9 +101,9 @@ h2 {
 }
 
 a {
-	text-decoration: none !important;
-	color: $color-dark !important;
-	&:hover {
-		color: $color-primary !important;
-	}
+  text-decoration: none !important;
+  color: $color-dark !important;
+  &:hover {
+    color: $color-primary !important;
+  }
 }

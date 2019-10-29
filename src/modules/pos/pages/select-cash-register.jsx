@@ -6,19 +6,22 @@ import '../../../assets/style/modules/pos/SelectCashRegister.scss';
 
 const SelectCashRegister = (props) => {
 
-  const [form, setForm] = useState({
-    email: '',
+  const [paymentBox, setPaymentBox] = useState({
+    idPaymentBox: '0',
+    paymentBox: '',
+    number: 0,
   });
 
-  const handleInput = (event) => {
-    setForm({
-      ...form,
+  const handleSelect = (event) => {
+    console.log(event)
+    setPaymentBox({
+      ...paymentBox,
       [event.target.name]: event.target.value,
     });
   };
-
   const handlSubmit = (event) => {
     event.preventDefault();
+    console.log('si')
     props.history.push('/');
   };
 
@@ -30,10 +33,8 @@ const SelectCashRegister = (props) => {
         </div>
         <div className='SelectCashRegister__container__form'>
           <div className='SelectCashRegister__container__form__logo'>
-            <img src={Logo} alt='Logo' />
-          </div>
-          <div className='SelectCashRegister__container__form__title'>
             <h2>Elegir caja registradora</h2>
+            <img src={Logo} alt='Logo' />
           </div>
           <form onSubmit={handlSubmit}>
             <div className='FormContainer'>
@@ -44,20 +45,16 @@ const SelectCashRegister = (props) => {
                 type='search'
                 className='FormInput'
               />
-              <br />
-              <h3>Caja</h3>
-              <br />
-              <select name='caja' size='3' className='FormSelector'>
-                <option value='1'>Caja 1</option>
-                <option value='2'>Caja 2</option>
-                <option value='3'>Caja 3</option>
+              <select
+                name='caja'
+                size='2'
+                className='FormSelector'
+                onChange={handleSelect}
+              >
+                <option name={paymentBox} value={idPaymentBox}>Caja 1</option>
+                <option name={paymentBox} value={idPaymentBox}>Caja 2</option>
+                <option name={paymentBox} value={idPaymentBox}>Caja 3</option>
               </select>
-            </div>
-            <div className='SelectCashRegister__container__form__btn'>
-              <Link to='#'>
-                <p>¿Olvido su contraseña?</p>
-              </Link>
-              <button className='button button-primary' type='submit'>Inciar Sesión</button>
             </div>
           </form>
         </div>
