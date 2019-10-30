@@ -1,28 +1,33 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import LogoCliente from '../../../assets/imagen/logo-pizza.png';
 import Logo from '../../../assets/imagen/dexpress.png';
 import '../../../assets/style/modules/pos/SelectCashRegister.scss';
 
+//provisonal
+import Data from '../../../mocks/state';
+
 const SelectCashRegister = (props) => {
 
-  const [paymentBox, setPaymentBox] = useState({
-    idPaymentBox: '0',
-    paymentBox: '',
-    number: 0,
-  });
+  const [paymentBox, setPaymentBox] = useState(Data);
 
   const handleSelect = (event) => {
-    console.log(event)
     setPaymentBox({
       ...paymentBox,
       [event.target.name]: event.target.value,
     });
   };
+
+  const handleSearch = (event) => {
+    console.log(event.target.value)
+    console.log(Data.paymentBox.includes(String(event.target.value)))
+    setPaymentBox({
+      paymentBox: Data.paymentBox.includes(event.target.value),
+    });
+  };
+
   const handlSubmit = (event) => {
     event.preventDefault();
-    console.log('si')
-    props.history.push('/');
+    /*     props.history.push('/'); */
   };
 
   return (
@@ -44,16 +49,16 @@ const SelectCashRegister = (props) => {
                 placeholder='Buscar caja'
                 type='search'
                 className='FormInput'
+
+                onChange={(text) => handleSearch(text)}
               />
               <select
                 name='caja'
-                size='2'
+                size='4'
                 className='FormSelector'
                 onChange={handleSelect}
               >
-                <option name={paymentBox} value={idPaymentBox}>Caja 1</option>
-                <option name={paymentBox} value={idPaymentBox}>Caja 2</option>
-                <option name={paymentBox} value={idPaymentBox}>Caja 3</option>
+                {Data.paymentBox.map((item) => <option key={item.idPaymentBox} name={item.paymentBox} value={item.idPaymentBox}>{item.paymentBox}</option>)}
               </select>
             </div>
           </form>

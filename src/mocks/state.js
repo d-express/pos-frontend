@@ -1,5 +1,5 @@
 const inicialState = {
-  paymentBox=[
+  paymentBox: [
     {
       idPaymentBox: 1234,
       paymentBox: 'caja numero 1',
@@ -27,4 +27,7 @@ const inicialState = {
       paymentBox: 'caja numero 6',
       number: 6,
     },
-  ];
+  ],
+};
+
+export default inicialState;
