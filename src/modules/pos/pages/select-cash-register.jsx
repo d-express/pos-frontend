@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LogoCliente from '../../../assets/imagen/logo-pizza.png';
 import Logo from '../../../assets/imagen/dexpress.png';
-import '../../../assets/style/modules/pos/SelectCashRegister.scss';
+import '../../../assets/styles/modules/pos/SelectCashRegister.scss';
 
 //provisonal
 import Data from '../../../mocks/state';

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import LogoCliente from '../assets/imagen/logo-pizza.png';
 import Logo from '../assets/imagen/dexpress.png';
-import '../assets/style/pages/login.scss';
+import '../assets/styles/pages/login.scss';
 
 const Login = (props) => {
   const [form, setForm] = useState({
