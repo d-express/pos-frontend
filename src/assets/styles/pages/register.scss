@@ -52,13 +52,15 @@ $border-radious: 30px;
         grid-template-columns: 3fr 1fr;
         margin-left: 2%;
         margin-top: 2%;
+        width: 90%;
         &__acepto{
           display: flex;
+          align-items: baseline;
           & input{
             margin-top: 5px;
             margin-right: 4px;
           }
-          & p{
+          & small{
             margin-right: 4px;
           }
         }

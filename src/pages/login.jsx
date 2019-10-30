@@ -56,10 +56,10 @@ const Login = (props) => {
               />
             </div>
             <div className='Login__container__form__btn'>
-              <Link to='#'>
+              <Link to='X'>
                 <p>¿Olvido su contraseña?</p>
               </Link>
-              <button className='button button-primary' type='submit'>Inciar Sesión</button>
+              <button className='btn btn-danger' type='submit'>Inciar Sesión</button>
             </div>
           </form>
         </div>

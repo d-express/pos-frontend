@@ -54,7 +54,7 @@ const SelectCashRegister = (props) => {
               />
               <select
                 name='caja'
-                size='4'
+                size='7'
                 className='FormSelector'
                 onChange={handleSelect}
               >
