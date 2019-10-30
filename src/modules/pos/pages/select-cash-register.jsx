@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import LogoCliente from '../../../assets/static/logo-pizza.png';
-import Logo from '../../../assets/static/dexpress.png';
+import LogoCliente from '../../../assets/imagen/logo-pizza.png';
+import Logo from '../../../assets/imagen/dexpress.png';
 import '../../../assets/style/modules/pos/SelectCashRegister.scss';
 
 const SelectCashRegister = (props) => {
