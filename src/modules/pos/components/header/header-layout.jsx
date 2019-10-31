@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const HeaderLayout = () => (
   <header>
-    <nav className='navbar justify-content-between navbar-expand-md fixed-top navbar-light bg-white'>
+    <nav className='navbar justify-content-between navbar-expand-md fixed-top navbar-light bg-white p-0'>
       <a className='navbar-brand' href='#'>
         <img src={Logo} height='48' alt='Dexpress' />
       </a>
