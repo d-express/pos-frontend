@@ -89,10 +89,12 @@ $secondary: $apple-red-color;
 .styleScroll{
 	overflow-y: scroll;
 	&::-webkit-scrollbar {
+		width: 2px;
 		height: 2px;
 	}
 	&::-webkit-scrollbar-thumb {
 		border-radius: 30px;
+		width: 2px;
 		height: 2px;
 		background: fade-out($red-color, 0.8);
 	}
@@ -103,6 +105,10 @@ $secondary: $apple-red-color;
 	}
 }
 
+.imgSmall{
+	height: 40px;
+	width: 40px;
+}
 .boton {
 	width: 74px;
 	height: 10px;

@@ -5,6 +5,7 @@
   grid-template-rows: 5% 70% 25%;
   grid-template-columns: 1% auto 1%;
   min-height: 90vh;
+  max-height: 90vh;
   &__icons{
     grid-row-start: 1;
     grid-row-end: 2;
@@ -18,6 +19,7 @@
     grid-column-start: 2;
     grid-column-end: 2;
     margin: 2% 0;
+    @extend .styleScroll;
   }
   &__accion{
     grid-row-start: 3;
