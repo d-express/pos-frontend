@@ -13,7 +13,6 @@ const posLayout = () => {
   const [data, setData] = useState(state);
 
   const handlenOrder = (product) => {
-    console.log( data.subtotal)
     setData({
       ...data,
       cart: [...data.cart, product],

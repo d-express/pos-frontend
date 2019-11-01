@@ -171,13 +171,6 @@ const inicialState = {
     },
   ],
   cart: [
-    {
-      id: 1,
-      name: 'Jamon',
-      description: 'familiar',
-      price: 20000,
-      type: 'clasica',
-    },
   ],
   subtotal: 0,
 };
