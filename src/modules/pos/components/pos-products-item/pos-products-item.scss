@@ -1,0 +1,14 @@
+@import "../../../../assets/styles/variables.scss";
+
+.PosProductsItem {
+  & .card-img-overlay {
+    background: fade-out($foreground-color, $amount: 0.4);
+  }
+  & .badge.badge-top-right {
+    top: 8px;
+    right: -7px;
+  }
+  & .card-rounded {
+    border-radius: 0.75rem;
+  }
+}

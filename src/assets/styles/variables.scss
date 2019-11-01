@@ -73,7 +73,7 @@ $secondary: $apple-red-color;
 		background: transparent;
 		text-align: center;
 		border: none;
-		overflow-y: scroll;
+		@extend .styleScroll;
 		& option {
 			margin: 0.5%;
 			text-align: center;
@@ -83,19 +83,23 @@ $secondary: $apple-red-color;
 				background-color: fade-out($red-color, $amount: 0.8);
 			}
 		}
-		&::-webkit-scrollbar {
-			height: 5px;
-		}
-		&::-webkit-scrollbar-thumb {
-			border-radius: 30px;
-			height: 5px;
-			background: fade-out($red-color, 0.8);
-		}
-		&::-webkit-scrollbar-thumb:hover {
-			display: block;
-			box-shadow: 0 0 2px 1px fade-out($red-color, 0.5);
-			background: $red-color;
-		}
+	}
+}
+
+.styleScroll{
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		height: 2px;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 30px;
+		height: 2px;
+		background: fade-out($red-color, 0.8);
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		display: block;
+		box-shadow: 0 0 2px 1px fade-out($red-color, 0.5);
+		background: $red-color;
 	}
 }
 
