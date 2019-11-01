@@ -1,0 +1,91 @@
+$color-primary: #d90429;
+$color-secondary: #ef233c;
+$color-contrast: #8d99ae;
+$color-light: #edf2f4;
+$color-dark: #2b2d42;
+$font-family: 'simple-line-icons';
+
+* {
+	margin: 0;
+}
+
+h2 {
+	font-size: 17px !important;
+}
+
+//estilo Input formularios
+//ejemplo
+/** <div className='FormContainer'>
+      <small className='FormLabel'>Contraseña</small>
+      <input className='FormInput' type='password' />
+    </div>*/
+
+.sombra {
+	-webkit-box-shadow: 1px 5px 5px 0px  fade-out($color-dark, $amount: 0.8);
+	-moz-box-shadow: 1px 5px 5px 0px  fade-out($color-dark, $amount: 0.8);
+	box-shadow: 1px 5px 5px 0px  fade-out($color-dark, $amount: 0.8);
+}
+
+.Form {
+	&Container {
+		position: relative;
+	}
+	&Input {
+		height: 35px;
+		border: 1px solid fade-out($color-dark, $amount: 0.8);
+		border-radius: 5px;
+		width: 90%;
+		margin: 2%;
+		padding-left: 2%;
+		&:focus {
+			border: 1px solid fade-out($color-dark, $amount: 0.2);
+		}
+	}
+	&Label {
+		background-color: $color-light;
+		position: absolute;
+		top: 5%;
+		left: 5%;
+	}
+	&Selector{
+		margin: 2%;
+		width: 90%;
+		background: transparent;
+		text-align: center;
+		& option{
+			margin: 1%;
+			text-align: center;
+		}
+		& option:hover{
+			background-color: $color-secondary;
+		}
+	}
+}
+
+.boton {
+	width: 74px;
+	height: 10px;
+	font-size: 17px;
+	width: 100px;
+	height: 30px;
+	font-size: 14px;
+	border: 1px solid $color-light;
+  border-radius: 10px;
+  @extend .sombra;
+	&-primario {
+		background-color: $color-primary;
+		color: $color-light;
+	}
+	&-primario:hover {
+		background-color: $color-secondary;
+		color: $color-light;
+	}
+}
+
+a {
+	text-decoration: none !important;
+	color: $color-dark !important;
+	&:hover {
+		color: $color-primary !important;
+	}
+}

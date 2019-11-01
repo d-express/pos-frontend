@@ -9,15 +9,7 @@
         }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "headers": { "cache-control": "s-maxage=31536000,immutable" },
-            "dest": "/$1"
-        },
-        {
-            "src": "/(.*)",
-            "headers": { "cache-control": "s-maxage=0" },
-            "dest": "dist/index.html"
-        }
+        {"src": "^/assets/(.*)", "dest": "assets/$1"},
+        {"src": "^/(.*)", "dest": "index.html"}
     ]
 }
