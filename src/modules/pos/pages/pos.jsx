@@ -1,7 +1,6 @@
 import React from 'react';
+import PosLayout from './pos/pos-layout';
 
-const Pos = () => {
-  return <div>Punto de venta</div>;
-};
+const Pos = () => (<PosLayout />);
 
 export default Pos;

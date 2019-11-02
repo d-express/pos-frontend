@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import LogoCliente from '../assets/static/logo-pizza.png';
-import Logo from '../assets/static/dexpress.png';
-import '../assets/style/pages/login.scss';
+import LogoCliente from '../assets/imagen/logo-pizza.png';
+import Logo from '../assets/imagen/dexpress.png';
+import '../assets/styles/pages/login.scss';
 
 const Login = (props) => {
   const [form, setForm] = useState({
@@ -56,10 +56,10 @@ const Login = (props) => {
               />
             </div>
             <div className='Login__container__form__btn'>
-              <Link to='#'>
+              <Link to='X'>
                 <p>¿Olvido su contraseña?</p>
               </Link>
-              <button className='boton boton-primario' type='submit'>Inciar Sesión</button>
+              <button className='btn btn-danger' type='submit'>Inciar Sesión</button>
             </div>
           </form>
         </div>

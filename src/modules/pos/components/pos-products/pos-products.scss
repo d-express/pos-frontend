@@ -1,0 +1,6 @@
+@import '../../../../assets/styles/variables.scss';
+.PosProducts{
+  &__items{
+    max-height: 80vh;
+    @extend .styleScroll
+  }}
