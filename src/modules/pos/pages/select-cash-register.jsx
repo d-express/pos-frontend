@@ -1,25 +1,33 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import LogoCliente from '../../../assets/static/logo-pizza.png';
-import Logo from '../../../assets/static/dexpress.png';
-import '../../../assets/style/modules/pos/SelectCashRegister.scss';
+import LogoCliente from '../../../assets/imagen/logo-pizza.png';
+import Logo from '../../../assets/imagen/dexpress.png';
+import '../../../assets/styles/modules/pos/SelectCashRegister.scss';
+
+//provisonal
+import Data from '../../../mocks/state';
 
 const SelectCashRegister = (props) => {
 
-  const [form, setForm] = useState({
-    email: '',
-  });
+  const [paymentBox, setPaymentBox] = useState(Data);
 
-  const handleInput = (event) => {
-    setForm({
-      ...form,
+  const handleSelect = (event) => {
+    setPaymentBox({
+      ...paymentBox,
       [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSearch = (event) => {
+    console.log(event.target.value)
+    console.log(Data.paymentBox.includes(String(event.target.value)))
+    setPaymentBox({
+      paymentBox: Data.paymentBox.includes(event.target.value),
     });
   };
 
   const handlSubmit = (event) => {
     event.preventDefault();
-    props.history.push('/');
+    /*     props.history.push('/'); */
   };
 
   return (
@@ -30,10 +38,8 @@ const SelectCashRegister = (props) => {
         </div>
         <div className='SelectCashRegister__container__form'>
           <div className='SelectCashRegister__container__form__logo'>
-            <img src={Logo} alt='Logo' />
-          </div>
-          <div className='SelectCashRegister__container__form__title'>
             <h2>Elegir caja registradora</h2>
+            <img src={Logo} alt='Logo' />
           </div>
           <form onSubmit={handlSubmit}>
             <div className='FormContainer'>
@@ -43,21 +49,17 @@ const SelectCashRegister = (props) => {
                 placeholder='Buscar caja'
                 type='search'
                 className='FormInput'
+
+                onChange={(text) => handleSearch(text)}
               />
-              <br />
-              <h3>Caja</h3>
-              <br />
-              <select name='caja' size='3' className='FormSelector'>
-                <option value='1'>Caja 1</option>
-                <option value='2'>Caja 2</option>
-                <option value='3'>Caja 3</option>
+              <select
+                name='caja'
+                size='7'
+                className='FormSelector'
+                onChange={handleSelect}
+              >
+                {Data.paymentBox.map((item) => <option key={item.idPaymentBox} name={item.paymentBox} value={item.idPaymentBox}>{item.paymentBox}</option>)}
               </select>
-            </div>
-            <div className='SelectCashRegister__container__form__btn'>
-              <Link to='#'>
-                <p>¿Olvido su contraseña?</p>
-              </Link>
-              <button className='boton boton-primario' type='submit'>Inciar Sesión</button>
             </div>
           </form>
         </div>
