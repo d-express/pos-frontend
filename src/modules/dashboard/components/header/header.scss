@@ -1,0 +1,123 @@
+@import '../../../../assets/styles/variables.scss';
+@import '../../../../assets/styles/mixins.scss';
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+.navbar {
+  background: $navbar-background-color;
+  height: $navbar-height;
+  @include depth(1);
+
+  >span {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 2;
+    &:first-of-type:after,
+    &:last-of-type:before {
+      content: '';
+      display: inline-block;
+    }
+  }
+
+  .menu-button {
+    color: $secondary-color;
+
+    i {
+      font-size: 1.2rem;
+    }
+
+    &:hover {
+      color: $theme-color-1;
+    }
+  }
+
+  .navbar-logo {
+    .logo {
+      height: 28px;
+      @include media-breakpoint-up(sm) {
+        height: 32px;
+      }
+      @include media-breakpoint-up(md) {
+        height: 36px;
+      }
+      @include media-breakpoint-up(lg) {
+        height: 40px;
+      }
+      @include media-breakpoint-up(xl) {
+        height: 44px;
+      }
+    }
+  }
+
+  .header-icons {
+    margin-right: 0;
+
+    @include media-breakpoint-up(md) {
+      margin-right: 1rem;
+    }
+  }
+
+  .header-icon {
+    font-size: 16px;
+    color: $secondary-color;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    vertical-align: initial;
+
+    @include media-breakpoint-up(md) {
+      padding-left: 0.6rem;
+      padding-right: 0.6rem;
+    }
+
+    &:hover {
+      color: $theme-color-1;
+    }
+
+    &#fullScreenButton i:last-of-type {
+      display: none;
+    }
+  }
+
+  .user {
+    color: lighten($foreground-color, 30%);
+    position: relative;
+    margin-left: initial;
+
+    img {
+      margin-left: 10px;
+      border-radius: 30px;
+      width: 30px;
+    }
+
+    .name {
+      display: none;
+    }
+
+    @include media-breakpoint-up(sm) {
+      img {
+        width: 40px;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .name {
+        display: inline;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    height: $navbar-height-sm;
+  }
+  @include media-breakpoint-up(md) {
+    height: $navbar-height-md;
+    padding: 0.5rem 1.5rem !important;
+  }
+  @include media-breakpoint-up(lg) {
+    height: $navbar-height-lg;
+    padding: 0.5rem 2rem !important;
+  }
+  @include media-breakpoint-up(xl) {
+    height: $navbar-height-xl;
+  }
+}

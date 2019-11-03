@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+.dropdown-menu {
+  font-size: 0.8rem;
+  border-radius: $border-radius;
+  background: $input-background;
+  border-color: rgba($foreground-color, 0.15);
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  color: $foreground-color;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: $background-color;
+  color: $foreground-color;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: $button-text-color;
+  text-decoration: none;
+  background-color: $theme-color-1;
+}
+
+.dropdown-divider {
+  border-color: $separator-color;
+}
