@@ -9,10 +9,15 @@ import {
 
 import Logo from '../../../../assets/images/dexpress.png';
 import ProfilePic from '../../../../assets/images/profile-pic.jpg';
+import MenuIcon from '../svg/MenuIcon';
+import MobileMenuIcon from '../svg/MobileMenuIcon';
 
 import './header.scss';
 
 const HeaderLayout = ({
+  containerClassnames,
+  menuClickCount,
+  menuButtonClick,
   mobileMenuButtonClick,
   isInFullScreen,
   toggleFullScreen,
@@ -22,10 +27,17 @@ const HeaderLayout = ({
     <span>
       <NavLink
         to='#'
-        className='menu-button'
+        className='menu-button d-none d-md-block'
+        onClick={(e) => menuButtonClick(e, menuClickCount, containerClassnames)}
+      >
+        <MenuIcon />
+      </NavLink>
+      <NavLink
+        to='#'
+        className='menu-button-mobile d-xs-block d-sm-block d-md-none'
         onClick={(e) => mobileMenuButtonClick(e, containerClassnames)}
       >
-        <i className='simple-icon-menu' />
+        <MobileMenuIcon />
       </NavLink>
     </span>
     <span className='justify-content-center'>

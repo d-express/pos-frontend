@@ -7,7 +7,7 @@
   height: $navbar-height;
   @include depth(1);
 
-  >span {
+  > span {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -21,6 +21,23 @@
 
   .menu-button {
     color: $secondary-color;
+    width: 60px;
+    text-align: center;
+
+    svg {
+      height: 12px;
+    }
+
+    .main {
+      fill: $foreground-color;
+      transition: fill $menu-collapse-time;
+      width: 10px;
+    }
+
+    .sub {
+      fill: $foreground-color;
+      transition: fill $menu-collapse-time;
+    }
 
     i {
       font-size: 1.2rem;
@@ -28,6 +45,18 @@
 
     &:hover {
       color: $theme-color-1;
+    }
+  }
+
+  .menu-button-mobile {
+    margin-right: 16px;
+    margin-left: initial;
+    color: $secondary-color;
+    text-align: center;
+    width: 20px;
+    svg {
+      height: 12px;
+      fill: $foreground-color;
     }
   }
 
