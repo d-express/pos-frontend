@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import React, { useState } from 'react';
 import Header from '../../components/header';
 import PosOrder from '../../components/pos-order';
@@ -13,11 +14,22 @@ const posLayout = () => {
   const [data, setData] = useState(state);
 
   const handlenOrder = (product) => {
-    setData({
-      ...data,
-      cart: [...data.cart, product],
-      subtotal: data.subtotal + product.price,
-    });
+    if (product.amount) {
+      product.amount += 1;
+      setData({
+        ...data,
+        cart: [...data.cart],
+        subtotal: data.subtotal + product.price,
+      });
+    } else {
+      product.amount = 1;
+      setData({
+        ...data,
+        cart: [...data.cart, product],
+        subtotal: data.subtotal + product.price,
+      });
+    }
+
   };
 
   return (
@@ -35,7 +47,7 @@ const posLayout = () => {
               type={item.type}
               description={item.description}
               price={item.price}
-              onClick={()=> handlenOrder(item)}
+              onClick={() => handlenOrder(item)}
             />
           ))}
         </PosProducts>
@@ -47,8 +59,8 @@ const posLayout = () => {
               key={item.id}
               img={imgProduct}
               name={item.name}
-              cant='1'
-              price={item.price}
+              cant={item.amount}
+              price={item.price * item.amount}
               type={item.type}
             />
           ))}
