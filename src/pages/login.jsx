@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import LogoCliente from '../assets/imagen/logo-pizza.png';
+import LogoCliente from '../assets/imagen/pizza-logo.png';
 import Logo from '../assets/imagen/dexpress.png';
 import '../assets/styles/pages/login.scss';
 

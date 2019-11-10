@@ -1,14 +1,25 @@
-@import "../../../../assets/styles/variables.scss";
+@import '../../../../assets/styles/variables.scss';
 
-.PosProductsItem {
-  & .card-img-overlay {
-    background: fade-out($foreground-color, $amount: 0.4);
+	.PosProductsItem {
+		& .card-img-overlay {
+			background: fade-out($foreground-color, $amount: 0.4);
+		}
+		& .badge.badge-top-right {
+			top: 8px;
+			right: -7px;
+		}
+		& .card-rounded {
+			border-radius: 0.75rem;
+    }
+    &__list{
+      & .card-body{
+        display: grid !important;
+        grid-template-columns: 2fr 1fr 1fr 0fr;
+      }
+    }
   }
-  & .badge.badge-top-right {
-    top: 8px;
-    right: -7px;
-  }
-  & .card-rounded {
-    border-radius: 0.75rem;
-  }
-}
+
+  .imgSmall{
+    height: 80px !important;
+    width: 80px !important;
+   }
