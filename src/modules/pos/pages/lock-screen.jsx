@@ -1,7 +1,12 @@
 import React from 'react';
+import numericKeyboard from '../components/numericKeyboard';
 
 const LockScreen = () => {
-  return <div>Desbloquear caja</div>;
+  return (
+    <div>
+      {React.createElement(numericKeyboard)}
+    </div>
+  );
 };
 
 export default LockScreen;

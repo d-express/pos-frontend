@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import LogoCliente from '../../../../assets/imagen/pizza-logo.png';
 import Logo from '../../../../assets/imagen/dexpress.png';
 import './SelectCashRegister-layout.scss';
-
 //provisonal
 import Data from '../../../../mocks/state';
 
@@ -18,8 +17,6 @@ const SelectCashRegisterLayout = (props) => {
   };
 
   const handleSearch = (event) => {
-    console.log(event.target.value)
-    console.log(Data.paymentBox.includes(String(event.target.value)))
     setPaymentBox({
       paymentBox: Data.paymentBox.includes(event.target.value),
     });

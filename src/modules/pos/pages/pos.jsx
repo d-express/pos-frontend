@@ -1,5 +1,5 @@
 import React from 'react';
-import PosLayout from '../components/pos/pos-layout.jsx';
+import PosLayout from '../components/pos/pos-layout';
 
 const Pos = () => (<PosLayout />);
 
