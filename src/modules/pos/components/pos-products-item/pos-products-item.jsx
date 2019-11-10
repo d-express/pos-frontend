@@ -15,7 +15,6 @@ const PosProductsItem = ({ img, name, type, description, price, onClick, }) => {
               <div className='card-title mb-0'>{name}</div>
               <p className='text-truncate mb-0'>{description}</p>
               <p className='text-truncate mb-0'>{price}</p>
-              <i className='simple-icon-layers' />
             </div>
           </div>
         </div>
@@ -28,7 +27,7 @@ const PosProductsItem = ({ img, name, type, description, price, onClick, }) => {
           <img
             alt={name}
             src={img}
-            className='list-thumbnail border-0 card-img-left imgSmall'
+            className='list-thumbnail border-0 card-img-left imgSmall_list'
           />
           <div className='card-body d-flex align-items-center h-100'>
             <div className='list-item-heading truncate pr-2'>{name}</div>
