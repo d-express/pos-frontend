@@ -1,5 +1,14 @@
 @import '../../../../assets/styles/variables.scss';
 
+@media (min-width: 576px) and (max-width: 766px) { 
+  .PosLaoyout{
+    grid-template-columns: 60% 40% !important;
+    & .FormContainer button{
+      padding: 0% !important;
+    }
+  }
+ }
+
 .PosLaoyout{
   display: grid;
   grid-template-columns: 80% 20%;
