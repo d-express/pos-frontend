@@ -1,4 +1,4 @@
-@import '../../../../modules/pos/components/global.scss';
+@import '../global.scss';
 $border-radious: 30px;
 
 .SelectCashRegister {
@@ -7,7 +7,7 @@ $border-radious: 30px;
   align-self: center;
   min-height: 100vh;
   min-width: 100vw;
-	background-image: url('../../../imagen/pizza.jpg');
+	background-image: url('../../../../assets/imagen/pizza.jpg');
   background-size: cover;
   &__container{
     display: grid;
