@@ -1,10 +1,10 @@
 import React from 'react';
-import numericKeyboard from '../components/numericKeyboard';
+import lockScreenLayout from '../components/lockScreenLayout';
 
 const LockScreen = () => {
   return (
     <div>
-      {React.createElement(numericKeyboard)}
+      {React.createElement(lockScreenLayout)}
     </div>
   );
 };
