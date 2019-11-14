@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "startIP": "webpack-dev-server --open --mode development --host 192.168.0.82",
     "build": "webpack --mode production"
   },
   "engines": {
@@ -13,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wilson-romero/pos.git"
+    "url": "git+https://github.com/d-express/pos-frontend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wilson-romero/pos/issues"
+    "url": "https://github.com/d-express/pos-frontend/issues"
   },
-  "homepage": "https://github.com/wilson-romero/pos#readme",
+  "homepage": "https://github.com/d-express/pos-frontend#readme",
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "bootstrap": "^4.3.1",
@@ -53,7 +52,7 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "sass-loader": "^7.1.0",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",

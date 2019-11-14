@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import LogoCliente from '../../../assets/imagen/logo-pizza.png';
-import Logo from '../../../assets/imagen/dexpress.png';
-import '../../../assets/styles/modules/pos/SelectCashRegister.scss';
+import LogoCliente from '../../../../assets/images/logo-pizza.png';
+import Logo from '../../../../assets/images/dexpress.png';
+import './SelectCashRegister.scss';
 
 //provisonal
-import Data from '../../../mocks/state';
+import Data from '../../../../mocks/state';
 
 const SelectCashRegister = (props) => {
 
@@ -18,8 +18,8 @@ const SelectCashRegister = (props) => {
   };
 
   const handleSearch = (event) => {
-    console.log(event.target.value)
-    console.log(Data.paymentBox.includes(String(event.target.value)))
+    console.log(event.target.value);
+    console.log(Data.paymentBox.includes(String(event.target.value)));
     setPaymentBox({
       paymentBox: Data.paymentBox.includes(event.target.value),
     });

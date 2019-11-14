@@ -4,13 +4,13 @@ import { withRouter } from 'react-router-dom';
 
 import Header from '../components/header';
 import Sidebar from '../components/sidebar';
-// import Main from '../components/main';
+import Main from '../components/main';
 
-const Dashboard = ({ containerClassnames, }) => (
+const Dashboard = ({ containerClassnames, children, }) => (
   <div id='app-container' className={containerClassnames}>
     <Header />
     <Sidebar />
-    {/* <Main /> */}
+    <Main>{children}</Main>
   </div>
 );
 

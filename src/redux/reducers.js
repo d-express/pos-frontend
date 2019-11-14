@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import menu from './menu/reducer';
-import settings from './settings/reducer';
+import menu from '../modules/dashboard/redux/menu/reducer';
 
 const reducers = combineReducers({
-  menu,
-  settings,
+  menu
 });
 
 export default reducers;

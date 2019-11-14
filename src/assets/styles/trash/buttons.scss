@@ -1,4 +1,4 @@
-@import './variables.scss';
+@use './config' as * ;
 
 .dropdown-menu {
   font-size: 0.8rem;

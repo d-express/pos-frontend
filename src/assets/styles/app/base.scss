@@ -1,0 +1,86 @@
+html {
+  width: 100%;
+  height: 100%;
+  background: $background-color;
+}
+
+body {
+  margin: 0;
+  font-family: $theme-font;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: $foreground-color;
+  background: $background-color;
+}
+
+h1 {
+  font-size: 1.3rem;
+  padding-top: 0.5rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.75rem;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+}
+
+h2 {
+  font-size: 1.1rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.4rem;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.3rem;
+  }
+}
+
+h4 {
+  font-size: 0.9rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.15rem;
+  }
+}
+
+h5 {
+  font-size: 0.9rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1.1rem;
+  }
+}
+
+h6 {
+  font-size: 0.85rem;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 1rem;
+  }
+}
+
+hr {
+  border-top: 1px solid $separator-color;
+}
+
+a {
+  color: $foreground-color;
+  transition: color $animation-time-short;
+
+  &:hover,
+  &:active {
+    text-decoration: initial;
+    color: $theme-color-5;
+  }
+}
+
+p {
+  font-size: 0.85rem;
+  line-height: 1.3rem;
+  font-family: $theme-font;
+}

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/imagen/dexpress.png';
-import '../assets/styles/pages/register.scss';
+import Logo from '../../assets/images/dexpress.png';
+
+import './register.scss';
 
 const Register = (props) => {
   const [form, setForm] = useState({

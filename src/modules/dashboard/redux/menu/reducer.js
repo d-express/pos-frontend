@@ -10,7 +10,7 @@ import {
   defaultMenuType,
   subHiddenBreakpoint,
   menuHiddenBreakpoint
-} from '../../modules/dashboard/constants/defaultValues';
+} from '../../constants/defaultValues';
 
 const INIT_STATE = {
   containerClassnames: defaultMenuType,

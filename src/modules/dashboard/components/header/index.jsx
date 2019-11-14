@@ -5,6 +5,7 @@ import {
   clickOnMobileMenu
   // logoutUser
 } from '../../../../redux/actions';
+import Fullscreen from '../../../../utils/fullscreen';
 
 import HeaderLayout from './header-layout';
 
@@ -39,24 +40,28 @@ const Header = (props) => {
     clickOnMobileMenu(containerClassnames);
   };
 
+  const toggleFullScreen = () => {
+    const fullscreen = new Fullscreen();
+    fullscreen.toggleFullScreen();
+  };
+
   return (
     <HeaderLayout
       containerClassnames={containerClassnames}
       menuClickCount={menuClickCount}
       menuButtonClick={menuButtonClick}
       mobileMenuButtonClick={mobileMenuButtonClick}
+      toggleFullScreen={toggleFullScreen}
     />
   );
 };
 
 const mapStateToProps = ({ menu, settings, }) => {
   const { containerClassnames, menuClickCount, selectedMenuHasSubItems, } = menu;
-  const { locale, } = settings;
   return {
     containerClassnames,
     menuClickCount,
     selectedMenuHasSubItems,
-    locale,
   };
 };
 export default connect(

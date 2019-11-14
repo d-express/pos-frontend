@@ -1,15 +1,17 @@
-@import '../../variables.scss';
+@import '../../assets/styles/config/index.scss';
+@import "../../assets/styles/app/_remove-later";
+
 $border-radious: 30px;
 
-.SelectCashRegister {
+.Login {
   display: flex;
   justify-content: center;
   align-self: center;
   min-height: 100vh;
   min-width: 100vw;
-	background-image: url('../../../imagen/pizza.jpg');
+  background-image: url('../../assets/images/pizza.jpg');
   background-size: cover;
-  &__container{
+  &__container {
     display: grid;
     grid-template-columns: 1fr 2fr;
     margin: auto;
@@ -17,36 +19,35 @@ $border-radious: 30px;
     width: 70%;
     border: 1px solid fade-out($gunmetal-color, $amount: 0.5);
     border-radius: $border-radious;
-    text-align: center;
     @extend .sombra;
-    &__logoCliente{
+    &__logoCliente {
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: $border-radious 0 0 $border-radious;
       background-color: fade-out($gunmetal-color, $amount: 0.5);
-      & img{
+      & img {
         max-width: 160px;
         max-height: 160px;
       }
     }
-    &__form{
+    &__form {
       border-radius: 0 $border-radious $border-radious 0;
-      background-color: $separator-color;
-      &__title{
+      background-color: $primary;
+      &__title {
         margin: 2%;
       }
-      &__logo{
+      &__logo {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         margin: 5%;
-        img{
+        img {
           height: 60px;
           width: 220px;
         }
       }
-      &__btn{
+      &__btn {
         width: 90%;
         margin-left: 2%;
         margin-top: 5%;
@@ -55,7 +56,7 @@ $border-radious: 30px;
         justify-content: space-between;
         align-items: center;
       }
-      & form{
+      & form {
         display: flex;
         flex-direction: column;
       }

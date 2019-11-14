@@ -1,6 +1,5 @@
-@import '../../../../assets/styles/variables.scss';
-@import '../../../../assets/styles/mixins.scss';
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../../../assets/styles/config/index.scss';
+@import '../../../../assets/styles/bootstrap/base.scss';
 
 .sidebar {
   position: fixed;
@@ -278,7 +277,7 @@
   @include media-breakpoint-up(xl) {
     padding-top: $navbar-height-xl;
     height: calc(100% - #{$navbar-height-xl});
-  }  
+  }
 }
 
 .sub-hidden .sub-menu,

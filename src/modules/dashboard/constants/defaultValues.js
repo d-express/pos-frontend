@@ -4,5 +4,5 @@ Menu Types:
 */
 export const defaultMenuType = 'menu-default';
 
-export const subHiddenBreakpoint = 992;
+export const subHiddenBreakpoint = 768;
 export const menuHiddenBreakpoint = 768;

@@ -1,6 +1,5 @@
-@import '../../../../assets/styles/variables.scss';
-@import '../../../../assets/styles/mixins.scss';
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../../../assets/styles/config/index.scss';
+@import '../../../../assets/styles/bootstrap/base.scss';
 
 .navbar {
   background: $navbar-background-color;
