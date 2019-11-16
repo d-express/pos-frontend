@@ -1,7 +1,7 @@
 import React from 'react';
 import './Pos-order-layOut.scss';
 
-const PosOrderLayOut = ({ children, subTotal, }) => {
+const PosOrderLayOut = ({ children, subTotal, btnCancel}) => {
   return (
     <div className='h-auto PosOrderLayOut'>
       <ul className='nav justify-content-center PosOrderLayOut__icons'>
@@ -33,18 +33,18 @@ const PosOrderLayOut = ({ children, subTotal, }) => {
         <div className='order-tax d-flex justify-content-between '>
           <p>
             Impuesto
-            </p>
+          </p>
           <span className='mr-0'>{subTotal * 0.19}</span>
         </div>
         <div className='order-total d-flex justify-content-between'>
           <p>
             Total
-            </p>
+          </p>
           <span className='mr-0'>{subTotal + (subTotal * 0.19)}</span>
         </div>
         <div className='d-flex'>
-          <button className='mb-2 btn btn-secondary btn'><span>Cancelar</span></button>
-          <button className='ml-2 mb-2 btn btn-success btn-block'><span>Pagar</span></button>
+          <button className='mb-2 btn btn-secondary btn' type='button' onClick={btnCancel}><span>Cancelar</span></button>
+          <button className='ml-2 mb-2 btn btn-success btn-block' type='button'><span>Pagar</span></button>
         </div>
       </div>
     </div>

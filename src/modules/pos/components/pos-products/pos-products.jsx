@@ -1,7 +1,7 @@
 import React from 'react';
 import './pos-products.scss';
 
-const PosProducts = ({ children }) => {
+const PosProducts = ({ children, }) => {
 
   const handleSearch = (event) => {
     console.log(event.target.value);
@@ -23,7 +23,7 @@ const PosProducts = ({ children }) => {
         />
       </div>
       <div className='container'>
-        <div className='row m-1 PosProducts__items'>
+        <div className='row PosProducts__items'>
           {children}
         </div>
       </div>
