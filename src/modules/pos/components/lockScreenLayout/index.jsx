@@ -1,6 +1,6 @@
 import React from 'react';
 import numericKeyboard from '../numericKeyboard';
-import LogoClient from '../../../../assets/imagen/pizza-logo.png';
+import LogoClient from '../../../../assets/images/pizza-logo.png';
 import './lockScrenLayout.scss';
 
 const lockScreenLayout = () => (

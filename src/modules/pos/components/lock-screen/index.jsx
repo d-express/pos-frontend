@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LogoCliente from '../../../../assets/imagen/pizza-logo.png';
-import Logo from '../../../../assets/imagen/dexpress.png';
+import LogoCliente from '../../../../assets/images/pizza-logo.png';
+import Logo from '../../../../assets/images/dexpress.png';
 //provisonal
 import Data from '../../../../mocks/state';
 

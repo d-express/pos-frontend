@@ -4,7 +4,7 @@ import Header from '../header';
 import PosOrder from '../pos-order';
 import PosProducts from '../pos-products/pos-products';
 import PosProductsItem from '../pos-products-item/pos-products-item';
-import imgProduct from '../../../../assets/imagen/pizza-min.jpg';
+import imgProduct from '../../../../assets/images/pizza-min.jpg';
 import state from '../../../../mocks/state';
 import './pos-layout.scss';
 import PosOrderIteam from '../pos-order-item/pos-order-item';
