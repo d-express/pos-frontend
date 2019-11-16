@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "startIP": "webpack-dev-server --open --mode development --host 192.168.0.82",
     "build": "webpack --mode production"
   },
   "engines": {
@@ -13,27 +12,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wilson-romero/pos.git"
+    "url": "git+https://github.com/d-express/pos-frontend.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wilson-romero/pos/issues"
+    "url": "https://github.com/d-express/pos-frontend/issues"
   },
-  "homepage": "https://github.com/wilson-romero/pos#readme",
+  "homepage": "https://github.com/d-express/pos-frontend#readme",
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^2.1.2",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "perfect-scrollbar": "^1.4.0",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-perfect-scrollbar": "^1.5.3",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "reactstrap": "^8.1.1",
@@ -41,6 +43,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
@@ -49,7 +52,7 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "sass-loader": "^7.1.0",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",

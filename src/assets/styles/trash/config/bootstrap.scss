@@ -1,0 +1,6 @@
+@use 'variables' as * ;
+@use '../../../../node_modules/bootstrap/scss/bootstrap.scss' with (
+    $enable-responsive-font-sizes: true,
+    $primary: #d7d7d7,
+    $secondary: $apple-red-color,
+);

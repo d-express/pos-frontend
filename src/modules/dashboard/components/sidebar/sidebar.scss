@@ -1,0 +1,390 @@
+@import '../../../../assets/styles/config/index.scss';
+@import '../../../../assets/styles/bootstrap/base.scss';
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding-top: $navbar-height;
+  height: calc(100% - #{$navbar-height});
+  z-index: 4;
+  transition: border-radius $menu-collapse-time;
+  @include depth(1);
+
+  .scrollbar-container {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .main-menu {
+    width: $main-menu-width;
+    height: calc(100% - #{$navbar-height});
+    background: $navbar-background-color;
+    z-index: 3;
+    position: fixed;
+    transition: transform $menu-collapse-time;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    left: 0;
+
+    .scroll {
+      padding-right: unset;
+      margin-right: unset;
+      height: 100%;
+
+      .ps__thumb-y {
+        right: 0;
+      }
+    }
+
+    &.main-hidden {
+      transform: translateX(-$main-menu-width);
+    }
+
+    ul li {
+      position: relative;
+
+      span {
+        text-align: center;
+        padding: 0 8px;
+        line-height: 14px;
+      }
+
+      a {
+        height: $main-menu-item-height-mobile;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        border-bottom: 1px solid $separator-color-light;
+        color: $foreground-color;
+        transition: color $menu-collapse-time;
+        transition: background $menu-collapse-time;
+
+        &:hover,
+        &:focus {
+          color: $theme-color-4;
+        }
+      }
+
+      i {
+        font-size: 28px;
+        line-height: 38px;
+      }
+
+      &.active a {
+        color: $theme-color-1;
+      }
+
+      &.active:after {
+        content: ' ';
+        background: $theme-color-4;
+        border-radius: 8px;
+        position: absolute;
+        width: 3px;
+        height: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+
+      &:last-of-type {
+        a {
+          border-bottom: initial;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      width: $main-menu-width-md;
+      height: calc(100% - #{$navbar-height-md});
+
+      ul li i {
+        font-size: 32px;
+        line-height: 42px;
+      }
+
+      ul li a {
+        height: $main-menu-item-height;
+      }
+
+      ul li.active:after {
+        width: 6px;
+        height: 90px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: $main-menu-width-lg;
+      height: calc(100% - #{$navbar-height-lg});
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: $main-menu-width-xl;
+      height: calc(100% - #{$navbar-height-xl});
+    }
+  }
+
+  .sub-menu {
+    left: $main-menu-width;
+    width: $sub-menu-width;
+    height: calc(100% - #{$navbar-height});
+    background: $navbar-background-color;
+    z-index: 2;
+    position: fixed;
+    border-left: 1px solid $separator-color-light;
+    border-radius: 0 $border-radius-rounded $border-radius-rounded 0;
+    @include depth(2);
+    transition: transform $menu-collapse-time;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0;
+    .scroll {
+      margin-right: unset;
+      padding-right: unset;
+      height: 100%;
+
+      .ps__thumb-y {
+        right: 0;
+      }
+
+      .scrollbar-container {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+
+    ul {
+      display: none;
+
+      li {
+        margin-bottom: 0;
+        margin-left: 30px;
+        position: relative;
+
+        a {
+          font-size: 13px;
+          display: block;
+          padding: 8px 0;
+          margin-bottom: 10px;
+        }
+
+        i {
+          font-size: 1.3em;
+          margin-right: 10px;
+          color: $secondary-color;
+          vertical-align: middle;
+          display: inline-block;
+        }
+
+        &.active i,
+        &.active a {
+          color: $theme-color-1;
+        }
+
+        &.active:after {
+          content: ' ';
+          background: $theme-color-1;
+          border-radius: 10px;
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          top: 50%;
+          transform: translateY(-50%);
+          left: -16px;
+        }
+
+        span {
+          vertical-align: middle;
+          padding-top: 3px;
+          display: inline-block;
+        }
+      }
+
+      li.has-sub-item {
+        &.active:after {
+          content: ' ';
+          background: initial;
+        }
+      }
+
+      ul.third-level-menu {
+        display: block !important;
+        li {
+          a,
+          i {
+            color: $foreground-color;
+          }
+          a:hover,
+          &.active i,
+          &.active a {
+            color: $theme-color-1;
+          }
+
+          &.active:after {
+            left: -22px;
+          }
+        }
+      }
+
+      .rotate-arrow-icon {
+        i {
+          transition: transform $animation-time-short;
+          transform: rotate(0);
+        }
+
+        &.collapsed {
+          i {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      left: $main-menu-width-md;
+      width: $sub-menu-width-md;
+      height: calc(100% - #{$navbar-height-md});
+    }
+
+    @include media-breakpoint-up(lg) {
+      left: $main-menu-width-lg;
+      width: $sub-menu-width-lg;
+      height: calc(100% - #{$navbar-height-lg});
+    }
+
+    @include media-breakpoint-up(xl) {
+      left: $main-menu-width-xl;
+      width: $sub-menu-width-xl;
+      height: calc(100% - #{$navbar-height-xl});
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: $navbar-height-md;
+    height: calc(100% - #{$navbar-height-md});
+    @include depth(0);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: $navbar-height-lg;
+    height: calc(100% - #{$navbar-height-lg});
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: $navbar-height-xl;
+    height: calc(100% - #{$navbar-height-xl});
+  }
+}
+
+.sub-hidden .sub-menu,
+.menu-sub-hidden .sub-menu,
+.menu-hidden .sub-menu {
+  transform: translateX(-$sub-menu-width);
+
+  @include media-breakpoint-up(md) {
+    transform: translateX(-$sub-menu-width-md);
+  }
+
+  @include media-breakpoint-up(lg) {
+    transform: translateX(-$sub-menu-width-lg);
+  }
+
+  @include media-breakpoint-up(xl) {
+    transform: translateX(-$sub-menu-width-xl);
+  }
+}
+
+.main-hidden .main-menu,
+.menu-hidden .main-menu {
+  transform: translateX(-$main-menu-width);
+
+  @include media-breakpoint-up(md) {
+    transform: translateX(-$main-menu-width-md);
+  }
+
+  @include media-breakpoint-up(lg) {
+    transform: translateX(-$main-menu-width-lg);
+  }
+
+  @include media-breakpoint-up(xl) {
+    transform: translateX(-$main-menu-width-xl);
+  }
+}
+
+.main-hidden.sub-hidden .sub-menu,
+.menu-hidden .sub-menu {
+  transform: translateX(-$sub-menu-width - $main-menu-width);
+
+  @include media-breakpoint-up(md) {
+    transform: translateX(-$sub-menu-width-md - $main-menu-width-md);
+  }
+
+  @include media-breakpoint-up(lg) {
+    transform: translateX(-$sub-menu-width-lg - $main-menu-width-lg);
+  }
+
+  @include media-breakpoint-up(xl) {
+    transform: translateX(-$sub-menu-width-xl - $main-menu-width-xl);
+  }
+}
+
+.menu-mobile {
+  .main-menu {
+    transform: translateX(-$main-menu-width);
+  }
+
+  .sub-menu {
+    transform: translateX(-$sub-menu-width - $main-menu-width - 50);
+  }
+}
+
+.main-show-temporary {
+  .main-menu {
+    transform: translateX(0);
+  }
+
+  .sub-menu {
+    transform: translateX(-$sub-menu-width);
+  }
+
+  @include media-breakpoint-up(md) {
+    .main-menu {
+      transform: translateX(0);
+    }
+
+    .sub-menu {
+      transform: translateX(-$sub-menu-width-md);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    .main-menu {
+      transform: translateX(0);
+    }
+
+    .sub-menu {
+      transform: translateX(-$sub-menu-width-lg);
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .main-menu {
+      transform: translateX(0);
+    }
+
+    .sub-menu {
+      transform: translateX(-$sub-menu-width-xl);
+    }
+  }
+}
+
+.sub-show-temporary,
+.menu-mobile.sub-show-temporary {
+  .sub-menu {
+    transform: translateX(0);
+  }
+}

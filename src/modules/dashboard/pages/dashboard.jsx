@@ -1,14 +1,27 @@
 import React from 'react';
-import Header from '../components/header';
-// import Sidebar from '../components/sidebar';
-// import Main from '../components/main';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-const Dashboard = () => (
-  <div>
+import Header from '../components/header';
+import Sidebar from '../components/sidebar';
+import Main from '../components/main';
+
+const Dashboard = ({ containerClassnames, children, }) => (
+  <div id='app-container' className={containerClassnames}>
     <Header />
-    {/* <Sidebar /> */}
-    {/* <Main /> */}
+    <Sidebar />
+    <Main>{children}</Main>
   </div>
 );
 
-export default Dashboard;
+const mapStateToProps = ({ menu, }) => {
+  const { containerClassnames, } = menu;
+  return { containerClassnames, };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    null
+  )(Dashboard)
+);

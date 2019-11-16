@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from '../../../../assets/imagen/dexpress.png';
 import { Link, NavLink } from 'react-router-dom';
+import Logo from '../../../../assets/images/dexpress.png';
 
 const HeaderLayout = () => (
   <header>
@@ -8,14 +8,15 @@ const HeaderLayout = () => (
       <a className='navbar-brand' href='#'>
         <img src={Logo} height='48' alt='Dexpress' />
       </a>
-      <h2 className='navbar-text'>
-        Italian Pizza
-      </h2>
+      <h2 className='navbar-text'>Italian Pizza</h2>
       <button
-        className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav'
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+        className='navbar-toggler'
+        type='button'
+        data-toggle='collapse'
+        data-target='#navbarNav'
+        aria-controls='navbarNav'
+        aria-expanded='false'
+        aria-label='Toggle navigation'
       >
         <span className='simple-icon-options-vertical' />
       </button>
@@ -47,7 +48,12 @@ const HeaderLayout = () => (
             </a>
           </li>
           <li className='nav-item'>
-            <a className='nav-link disabled' href='#' tabIndex='-1' aria-disabled='true'>
+            <a
+              className='nav-link disabled'
+              href='#'
+              tabIndex='-1'
+              aria-disabled='true'
+            >
               <i className='iconsminds-gear-2' />
             </a>
           </li>
