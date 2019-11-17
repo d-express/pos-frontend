@@ -1,7 +1,7 @@
 import React from 'react';
 import './pos-products.scss';
 
-const PosProducts = ({ children, onClick, }) => {
+const PosProducts = ({ children, onClick, grupo, }) => {
 
   const handleSearch = (event) => {
     console.log(event.target.value);
@@ -26,7 +26,7 @@ const PosProducts = ({ children, onClick, }) => {
         {children}
       </div>
       <div className='PosProducts__group'>
-        Grupo
+        {grupo}
       </div>
     </section>
   );

@@ -12,7 +12,7 @@ import './pos-layout.scss';
 const posLayout = () => {
 
   const [data, setData] = useState(state);
-  const [group, setGroup] = useState('products');
+  const [group, setGroup] = useState(0);
 
   const handlenOrder = (product) => {
     if (product.amount) {
@@ -52,8 +52,18 @@ const posLayout = () => {
   };
 
   const backProducts = () => {
-    setGroup('products');
+    setGroup(0);
   };
+
+  const bannerGroup = () => {
+    let value = 'grupo';
+    data.productsGroup.map((item) => {
+      if (item.id === group) {
+        value = item.category;
+      }
+    });
+    return value;
+  }
 
   return (
     <section className='PosLaoyout'>
@@ -61,7 +71,7 @@ const posLayout = () => {
         <Header />
       </div>
       <div className='PosLaoyout__products'>
-        {group === 'products' ? (
+        {group === 0 ? (
           <div className='container text-center mt-4'>
             <h2>Grupo de productos</h2>
             <div className='row justify-content-center mt-4'>
@@ -73,12 +83,14 @@ const posLayout = () => {
                   onClick={() => selectProducts(group.id)}
                 />
               ))}
-
             </div>
           </div>
         ) :
           (
-            <PosProducts onClick={() => backProducts()}>
+            <PosProducts
+              onClick={() => backProducts()}
+              grupo={bannerGroup()}
+            >
               {data.products.map((item) => (
                 item.idProductGroup === group && (
                   <PosProductsItem
