@@ -1,33 +1,34 @@
-@import '../../../../assets/styles/config/index.scss';
+@import "../global.scss";
 
-@media (min-width: 576px) and (max-width: 766px) { 
-  .PosLaoyout{
+@media (min-width: 576px) and (max-width: 766px) {
+  .PosLaoyout {
     grid-template-columns: 60% 40% !important;
-    & .FormContainer button{
+    & .FormContainer button {
       padding: 0% !important;
     }
   }
- }
+}
 
-.PosLaoyout{
+.PosLaoyout {
   display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 10% 90% ;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 13% 87%;
   min-height: 100vh;
   max-height: 100vh;
-  &__header{
+  @extend .styleScroll;
+  &__header {
     grid-row-start: 1;
     grid-row-end: 1;
     grid-row-start: 1;
     grid-row-end: 2;
   }
-  &__products{
+  &__products {
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 2;
   }
-  &__order{
+  &__order {
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 2;

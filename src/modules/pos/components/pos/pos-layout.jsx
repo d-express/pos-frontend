@@ -4,14 +4,15 @@ import Header from '../header';
 import PosOrder from '../pos-order';
 import PosProducts from '../pos-products/pos-products';
 import PosProductsItem from '../pos-products-item/pos-products-item';
-import imgProduct from '../../../../assets/images/pizza-min.jpg';
+import PosOrderIteam from '../pos-order-item/pos-order-item';
+import PosGroup from '../pos-group';
 import state from '../../../../mocks/state';
 import './pos-layout.scss';
-import PosOrderIteam from '../pos-order-item/pos-order-item';
 
 const posLayout = () => {
 
   const [data, setData] = useState(state);
+  const [group, setGroup] = useState('products');
 
   const handlenOrder = (product) => {
     if (product.amount) {
@@ -45,32 +46,57 @@ const posLayout = () => {
       subtotal: 0,
     });
   };
+
+  const selectProducts = (id) => {
+    setGroup(id);
+  };
+
   return (
     <section className='PosLaoyout'>
       <div className='PosLaoyout__header'>
         <Header />
       </div>
       <div className='PosLaoyout__products'>
-        <PosProducts>
-          {data.products.map((item) => (
-            <PosProductsItem
-              key={item.id}
-              img={imgProduct}
-              name={item.name}
-              type={item.type}
-              description={item.description}
-              price={item.price}
-              onClick={() => handlenOrder(item)}
-            />
-          ))}
-        </PosProducts>
+        {group === 'products' ? (
+          <div className='container text-center mt-4'>
+            <h2>Grupo de productos</h2>
+            <div className='row justify-content-center mt-4'>
+              {data.productsGroup.map((group) => (
+                <PosGroup
+                  key={group.id}
+                  name={group.category}
+                  img={group.img}
+                  onClick={() => selectProducts(group.id)}
+                />
+              ))}
+
+            </div>
+          </div>
+        ) :
+          (
+            <PosProducts>
+              {data.products.map((item) => (
+                item.idProductGroup === group && (
+                  <PosProductsItem
+                    key={item.id}
+                    img={item.img}
+                    name={item.name}
+                    type={item.type}
+                    description={item.description}
+                    price={item.price}
+                    onClick={() => handlenOrder(item)}
+                  />
+                )
+              ))}
+            </PosProducts>
+          )}
       </div>
       <div className='PosLaoyout__order'>
         <PosOrder subTotal={data.subtotal} btnCancel={CancelOrden}>
           {data.cart.map((item) => (
             <PosOrderIteam
               key={item.id}
-              img={imgProduct}
+              img={item.img}
               name={item.name}
               cant={item.amount}
               price={item.price * item.amount}

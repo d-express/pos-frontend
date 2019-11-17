@@ -22,10 +22,11 @@ const PosProducts = ({ children, }) => {
           onChange={(text) => handleSearch(text)}
         />
       </div>
-      <div className='container'>
-        <div className='row PosProducts__items'>
-          {children}
-        </div>
+      <div className='row PosProducts__items pb-4'>
+        {children}
+      </div>
+      <div className='PosProducts__group'>
+        Grupo
       </div>
     </section>
   );

@@ -1,6 +1,25 @@
 @import '../global.scss';
 .PosProducts{
+  position: relative;
   &__items{
-    max-height: 80vh;
+    max-height: 78vh;
+    min-height: 78vh;
+    padding: 0% 5%;
+    margin: 0% !important;
     @extend .styleScroll
-  }}
+  }
+  &__group{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 30px;
+    z-index: 1040;
+    bottom: 1%;
+    text-align: center;
+    border-right: 60px solid transparent;
+    border-left: 60px solid transparent;
+    color: $flash-white-color;
+    border-bottom: 34px solid $gunmetal-color;
+  }
+}

@@ -1,3 +1,6 @@
+import imgPizza from '../assets/images/pizza-min.jpg';
+import imgGaseosa from '../assets/images/gaseosa.jpg';
+
 const inicialState = {
   paymentBox: [
     {
@@ -35,6 +38,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 2,
@@ -42,6 +47,8 @@ const inicialState = {
       description: 'Tomate y orég',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 3,
@@ -49,6 +56,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 20,
@@ -56,6 +65,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 4,
@@ -63,6 +74,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 5,
@@ -70,6 +83,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 6,
@@ -77,6 +92,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 7,
@@ -84,6 +101,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 8,
@@ -91,6 +110,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'especial',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 9,
@@ -98,6 +119,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'especial',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 10,
@@ -105,6 +128,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 11,
@@ -112,6 +137,8 @@ const inicialState = {
       description: 'Tomate y orég',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 12,
@@ -119,6 +146,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 13,
@@ -126,6 +155,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 14,
@@ -133,6 +164,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 15,
@@ -140,6 +173,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 16,
@@ -147,6 +182,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 17,
@@ -154,6 +191,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'clasica',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 18,
@@ -161,6 +200,8 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'especial',
+      img: imgPizza,
+      idProductGroup: 1234,
     },
     {
       id: 19,
@@ -168,6 +209,56 @@ const inicialState = {
       description: 'familiar',
       price: 20000,
       type: 'especial',
+      img: imgPizza,
+      idProductGroup: 1234,
+    },
+    {
+      id: 20,
+      name: 'Pepsi',
+      description: 'Gasesosa 10onz',
+      price: 3000,
+      type: 'Bebida',
+      img: imgGaseosa,
+      idProductGroup: 1235,
+    },
+    {
+      id: 21,
+      name: 'Cocacola',
+      description: 'Gasesosa 10onz',
+      price: 3000,
+      type: 'Bebida',
+      img: imgGaseosa,
+      idProductGroup: 1235,
+    },
+    {
+      id: 22,
+      name: 'Colombiana',
+      description: 'Gasesosa 10onz',
+      price: 3000,
+      type: 'Bebida',
+      img: imgGaseosa,
+      idProductGroup: 1235,
+    },
+    {
+      id: 23,
+      name: 'Manzana',
+      description: 'Gasesosa 10onz',
+      price: 3000,
+      type: 'Bebida',
+      img: imgGaseosa,
+      idProductGroup: 1235,
+    },
+  ],
+  productsGroup: [
+    {
+      id: 1234,
+      category: 'Pizza',
+      img: imgPizza,
+    },
+    {
+      id: 1235,
+      category: 'Gaseosa',
+      img: imgGaseosa,
     },
   ],
   cart: [
