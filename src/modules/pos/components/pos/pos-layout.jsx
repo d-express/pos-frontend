@@ -51,6 +51,10 @@ const posLayout = () => {
     setGroup(id);
   };
 
+  const backProducts = () => {
+    setGroup('products');
+  };
+
   return (
     <section className='PosLaoyout'>
       <div className='PosLaoyout__header'>
@@ -74,7 +78,7 @@ const posLayout = () => {
           </div>
         ) :
           (
-            <PosProducts>
+            <PosProducts onClick={() => backProducts()}>
               {data.products.map((item) => (
                 item.idProductGroup === group && (
                   <PosProductsItem
