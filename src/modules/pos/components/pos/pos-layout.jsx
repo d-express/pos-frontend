@@ -1,25 +1,50 @@
+/* eslint-disable no-param-reassign */
 import React, { useState } from 'react';
-import Header from '../../components/header';
-import PosOrder from '../../components/pos-order';
-import PosProducts from '../../components/pos-products/pos-products';
-import PosProductsItem from '../../components/pos-products-item/pos-products-item';
+import Header from '../header';
+import PosOrder from '../pos-order';
+import PosProducts from '../pos-products/pos-products';
+import PosProductsItem from '../pos-products-item/pos-products-item';
 import imgProduct from '../../../../assets/images/pizza-min.jpg';
 import state from '../../../../mocks/state';
 import './pos-layout.scss';
-import PosOrderIteam from '../../components/pos-order-item/pos-order-item';
+import PosOrderIteam from '../pos-order-item/pos-order-item';
 
 const posLayout = () => {
 
   const [data, setData] = useState(state);
 
   const handlenOrder = (product) => {
-    setData({
-      ...data,
-      cart: [...data.cart, product],
-      subtotal: data.subtotal + product.price,
-    });
+    if (product.amount) {
+      product.amount += 1;
+      setData({
+        ...data,
+        cart: [...data.cart],
+        subtotal: data.subtotal + product.price,
+      });
+    } else {
+      product.amount = 1;
+      setData({
+        ...data,
+        cart: [...data.cart, product],
+        subtotal: data.subtotal + product.price,
+      });
+    }
+
   };
 
+  const CancelOrden = () => {
+    // eslint-disable-next-line array-callback-return
+    data.products.map((item) => {
+      if (item.amount) {
+        delete item.amount;
+      }
+    });
+    setData({
+      ...data,
+      cart: [],
+      subtotal: 0,
+    });
+  };
   return (
     <section className='PosLaoyout'>
       <div className='PosLaoyout__header'>
@@ -41,14 +66,14 @@ const posLayout = () => {
         </PosProducts>
       </div>
       <div className='PosLaoyout__order'>
-        <PosOrder subTotal={data.subtotal}>
+        <PosOrder subTotal={data.subtotal} btnCancel={CancelOrden}>
           {data.cart.map((item) => (
             <PosOrderIteam
               key={item.id}
               img={imgProduct}
               name={item.name}
-              cant='1'
-              price={item.price}
+              cant={item.amount}
+              price={item.price * item.amount}
               type={item.type}
             />
           ))}

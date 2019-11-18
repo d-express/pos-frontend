@@ -1,4 +1,10 @@
-@import '../../components/global.scss';
+<<<<<<< HEAD:src/modules/pos/pages/select-cash-register/SelectCashRegister.scss
+@import '../../../../assets/styles/config/index.scss';
+@import '../../../../assets/styles/app/_remove-later';
+
+=======
+@import '../global.scss';
+>>>>>>> feature/pos:src/modules/pos/components/select-cash-register/SelectCashRegister-layout.scss
 $border-radious: 30px;
 
 .SelectCashRegister {
@@ -7,7 +13,11 @@ $border-radious: 30px;
   align-self: center;
   min-height: 100vh;
   min-width: 100vw;
+<<<<<<< HEAD:src/modules/pos/pages/select-cash-register/SelectCashRegister.scss
 	background-image: url('../../../../assets/images/pizza.jpg');
+=======
+	background-image: url('../../../../assets/images/pizza.jpg');
+>>>>>>> feature/pos:src/modules/pos/components/select-cash-register/SelectCashRegister-layout.scss
   background-size: cover;
   &__container{
     display: grid;

@@ -1,8 +1,17 @@
 @import '../../../../assets/styles/config/index.scss';
 
+@media (min-width: 576px) and (max-width: 766px) { 
+  .PosLaoyout{
+    grid-template-columns: 60% 40% !important;
+    & .FormContainer button{
+      padding: 0% !important;
+    }
+  }
+ }
+
 .PosLaoyout{
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 80% 20%;
   grid-template-rows: 10% 90% ;
   min-height: 100vh;
   max-height: 100vh;

@@ -1,0 +1,29 @@
+@import "../global.scss";
+
+.numericKeyboard {
+  color: $primary;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  .display {
+    border: 1px solid $primary;
+  }
+  .numbers {
+    border: 1px solid $primary;
+    border-right: none;
+    border-bottom: none;
+    .btn {
+      border-radius: 0;
+      border-top: none;
+      border-left: none;
+      font-weight: bold;
+      height: 3rem;
+    }
+    .btn-success {
+      padding: 0;
+    }
+    .col-4 {
+      padding: 0;
+    }
+  }
+}

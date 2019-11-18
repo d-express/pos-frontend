@@ -1,6 +1,4 @@
-@import '../../../../assets/styles/config/index.scss';
-@import '../../../../assets/styles/app/_remove-later';
-
+@import '../global.scss';
 .PosProducts{
   &__items{
     max-height: 80vh;
