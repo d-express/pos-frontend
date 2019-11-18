@@ -33,9 +33,19 @@ const Register = (props) => {
             <img src={Logo} alt='Logo' />
           </div>
           <div className='Register__container__form__title'>
-            <h2>Iniciar Sesión</h2>
+            <h2>Registro</h2>
           </div>
           <form onSubmit={handlSubmit}>
+            <div className='FormContainer'>
+              <small className='FormLabel'>NIT</small>
+              <input
+                name='nit'
+                className='FormInput'
+                type='number'
+                onChange={handleInput}
+                required
+              />
+            </div>
             <div className='FormContainer'>
               <small className='FormLabel'>Empresa o negocio</small>
               <input
@@ -96,7 +106,11 @@ const Register = (props) => {
               </div>
               <button className='btn btn-danger' type='submit'>Comenzar</button>
             </div>
+            <Link to='/login' className='text-center'>
+              Ya tengo Cuenta
+            </Link>
           </form>
+
         </div>
       </div>
     </section>

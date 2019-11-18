@@ -39,7 +39,7 @@ $border-radious: 30px;
       }
       &__logo{
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-around;
         align-items: center;
         margin: 5%;
         img{
