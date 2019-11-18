@@ -100,7 +100,7 @@ const Register = (props) => {
               <div className='Register__container__form__accion__acepto'>
                 <input type='checkbox' placeholder='Acepto' name='acepto' required />
                 <small>Estoy de acuerdo con los </small>
-                <Link to='X' className='Register__container__form__accion__link'>
+                <Link to='/' className='Register__container__form__accion__link'>
                   <small>términos y condiciones</small>
                 </Link>
               </div>
