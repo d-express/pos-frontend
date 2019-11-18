@@ -47,6 +47,15 @@ const posLayout = () => {
     });
   };
 
+  const ConfirmOrder = () => {
+    setData({
+      ...data,
+      historyTransaccion: [...data.historyTransaccion, data.cart],
+    });
+    console.log(data.historyTransaccion);
+    CancelOrden();
+  };
+
   const selectProducts = (id) => {
     setGroup(id);
   };
@@ -63,7 +72,7 @@ const posLayout = () => {
       }
     });
     return value;
-  }
+  };
 
   return (
     <section className='PosLaoyout'>
@@ -108,7 +117,11 @@ const posLayout = () => {
           )}
       </div>
       <div className='PosLaoyout__order'>
-        <PosOrder subTotal={data.subtotal} btnCancel={CancelOrden}>
+        <PosOrder
+          subTotal={data.subtotal}
+          btnCancel={CancelOrden}
+          btnPay={ConfirmOrder}
+        >
           {data.cart.map((item) => (
             <PosOrderIteam
               key={item.id}

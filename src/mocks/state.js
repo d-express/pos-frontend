@@ -263,6 +263,7 @@ const inicialState = {
   ],
   cart: [
   ],
+  historyTransaccion: [],
   subtotal: 0,
 };
 

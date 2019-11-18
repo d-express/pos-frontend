@@ -5,9 +5,9 @@ import Logo from '../../../../assets/images/dexpress.png';
 const HeaderLayout = () => (
   <header>
     <nav className='navbar justify-content-between navbar-expand-md fixed-top navbar-light bg-white p-0'>
-      <a className='navbar-brand' href='#'>
+      <Link to='/' className='navbar-brand'>
         <img src={Logo} height='48' alt='Dexpress' />
-      </a>
+      </Link>
       <h2 className='navbar-text'>Italian Pizza</h2>
       <button
         className='navbar-toggler'
@@ -43,19 +43,17 @@ const HeaderLayout = () => (
             </a>
           </li>
           <li className='nav-item'>
-            <a className='nav-link' href='#'>
+            <Link to='/lock-screen' className='nav-link'>
               <i className='simple-icon-lock' />
-            </a>
+            </Link>
           </li>
           <li className='nav-item'>
-            <a
-              className='nav-link disabled'
-              href='#'
-              tabIndex='-1'
-              aria-disabled='true'
+            <Link
+              to='/dashboard'
+              className='nav-link'
             >
               <i className='iconsminds-gear-2' />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
