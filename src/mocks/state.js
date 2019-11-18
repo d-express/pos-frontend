@@ -261,6 +261,16 @@ const inicialState = {
       img: imgGaseosa,
     },
   ],
+  client: [
+    {
+      idClient: 0,
+      name: 'sin registar',
+    },
+    {
+      idClient: 1030552386,
+      name: 'Alejandro Lopez Ramirez',
+    },
+  ],
   cart: [
   ],
   historyTransaccion: [],
