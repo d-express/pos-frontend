@@ -1,16 +1,15 @@
-@import '../../../../assets/styles/config/index.scss';
-@import '../../../../assets/styles/bootstrap/base.scss';
+@import "../../../../assets/styles/config/index.scss";
+@import "../../../../assets/styles/bootstrap/base.scss";
 
 main {
-  background: yellow;
   margin-top: $main-margin + $navbar-height !important;
   margin-left: $main-margin !important;
   margin-right: $main-margin !important;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   transition: margin-left $menu-collapse-time;
 
   &.sub-hidden {
-    margin-left: $main-menu-width + $main-margin !important;
+      margin-left: $main-menu-width + $main-margin !important;
   }
 
   &.main-hidden {
@@ -23,28 +22,65 @@ main {
   }
 
   @include media-breakpoint-up(sm) {
-    background: blue;
     margin-top: $main-margin + $navbar-height-sm !important;
   }
 
   @include media-breakpoint-up(md) {
-    background: purple;
-    margin-top: $main-margin-md + $navbar-height-md - 8 !important;
-    //     margin-left: $sub-menu-width-md + $main-menu-width-md + $main-margin-md;
-    //     margin-right: $main-margin-md;
-    //     margin-bottom: 20px;
+    margin-top: $main-margin-md + $navbar-height-md - 16 !important;
+    margin-left: $sub-menu-width-md + $main-menu-width-md + $main-margin-md !important;
+    margin-right: $main-margin-md !important;
+    margin-bottom: 16px !important;
   }
 
   @include media-breakpoint-up(lg) {
-    //     margin-left: $sub-menu-width-lg + $main-menu-width-lg + $main-margin-lg;
-    //     margin-right: $main-margin-lg;
-    //     margin-top: $main-margin-lg + $navbar-height-lg -10;
-    //     margin-bottom: 30px;
+    margin-left: $sub-menu-width-lg + $main-menu-width-lg + $main-margin-lg !important;
+    margin-right: $main-margin-lg / 2 !important;
+    margin-top: $main-margin-lg + $navbar-height-lg - 24 !important;
+    margin-bottom: 24px !important;
   }
 
   @include media-breakpoint-up(xl) {
-    //     margin-left: $sub-menu-width-xl + $main-menu-width-xl + $main-margin-xl;
-    //     margin-right: $main-margin-xl;
-    //     margin-top: $navbar-height-xl + $main-margin-xl - 15;
+    margin-left: $sub-menu-width-xl + $main-menu-width-xl + $main-margin-xl !important;
+    margin-right: $main-margin-xl / 2 !important;
+    margin-top: $navbar-height-xl + $main-margin-xl - 32 !important;
+  }
+}
+
+//Menu Config Main
+
+.sub-hidden main,
+.menu-sub-hidden main,
+.menu-hidden main {
+  margin-left: $main-margin !important;
+}
+
+.main-hidden main,
+.menu-hidden main {
+  margin-left: $main-margin !important;
+}
+
+@include media-breakpoint-up(md) {
+  .sub-hidden main,
+  .menu-sub-hidden main,
+  .menu-hidden main {
+    margin-left: $main-menu-width-md + $main-margin-md !important;
+  }
+
+  .main-hidden main,
+  .menu-hidden main {
+    margin-left: $main-margin-md !important;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .sub-hidden main,
+  .menu-sub-hidden main,
+  .menu-hidden main {
+    margin-left: $main-menu-width-lg + $main-margin-lg !important;
+  }
+
+  .main-hidden main,
+  .menu-hidden main {
+    margin-left: $main-margin-lg !important;
   }
 }

@@ -3,8 +3,8 @@ import Dashboard from './pages/dashboard';
 
 const routes = [
   {
-    path: ['/dashboard', '/dashboard/sales'],
-    exact: true,
+    path: '/dashboard',
+    exact: false,
     children: <Dashboard />,
   }
 ];

@@ -23,6 +23,15 @@ $enable-responsive-font-sizes: true;
 $primary: #d7d7d7;
 $secondary: $apple-red-color;
 
+
+$info-color: #3195a5;
+$success-color: #3e884f;
+$warning-color: #b69329;
+$error-color: #c43d4b;
+
+$dark-btn-background: #131113;
+$light-btn-background: #ececec;
+
 $animation-time-long: 1000ms;
 $animation-time-short: 200ms;
 
@@ -64,6 +73,6 @@ $sub-menu-width-lg: 230px;
 $sub-menu-width-xl: 230px;
 
 $main-margin: 16px;
-$main-margin-md: 40px;
-$main-margin-lg: 48px;
-$main-margin-xl: 56px;
+$main-margin-md: 32px;
+$main-margin-lg: 56px;
+$main-margin-xl: 64px;

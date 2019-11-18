@@ -10,7 +10,7 @@ const Dashboard = ({ containerClassnames, children, }) => (
   <div id='app-container' className={containerClassnames}>
     <Header />
     <Sidebar />
-    <Main>{children}</Main>
+    <Main />
   </div>
 );
 
