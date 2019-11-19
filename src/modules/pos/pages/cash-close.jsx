@@ -1,7 +1,8 @@
 import React from 'react';
+import PaymentBoxClose from '../components/PaymentBoxClose';
 
 const CashClose = () => {
-  return <div>Cierre de caja</div>;
+  return <PaymentBoxClose />;
 };
 
 export default CashClose;
