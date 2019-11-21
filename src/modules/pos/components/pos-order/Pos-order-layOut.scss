@@ -2,7 +2,7 @@
 
 .PosOrderLayOut{
   display: grid;
-  grid-template-rows: 5% 70% 25%;
+  grid-template-rows: 5% 13% 57% 25%;
   grid-template-columns: 1% auto 1%;
   min-height: 90vh;
   max-height: 90vh;
@@ -13,17 +13,26 @@
     grid-column-end: 3;
     border-bottom: 1px solid $gunmetal-color;
   }
-  &__content{
+  &__client{
     grid-row-start: 2;
     grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    & input {
+      font-size: 11px !important;
+    }
+  }
+  &__content{
+    grid-row-start: 3;
+    grid-row-end: 4;
     grid-column-start: 2;
     grid-column-end: 2;
     margin: 2% 0;
     @extend .styleScroll;
   }
   &__accion{
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
     grid-column-start: 2;
     grid-column-end: 2;
   }

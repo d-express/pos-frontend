@@ -1,7 +1,7 @@
 import React from 'react';
 import './pos-products.scss';
 
-const PosProducts = ({ children, }) => {
+const PosProducts = ({ children, onClick, grupo, }) => {
 
   const handleSearch = (event) => {
     console.log(event.target.value);
@@ -10,7 +10,7 @@ const PosProducts = ({ children, }) => {
   return (
     <section className='PosProducts'>
       <div className='FormContainer'>
-        <button type='button' className='btn btn-white'>
+        <button type='button' className='btn btn-white' onClick={onClick}>
           <i className='simple-icon-arrow-left' />
         </button>
         <input
@@ -26,7 +26,7 @@ const PosProducts = ({ children, }) => {
         {children}
       </div>
       <div className='PosProducts__group'>
-        Grupo
+        {grupo}
       </div>
     </section>
   );

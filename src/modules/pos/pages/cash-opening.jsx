@@ -1,7 +1,9 @@
 import React from 'react';
+import CashOpen from '../components/cashOpening';
 
 const CashOpening = () => {
-  return <div>Apertura de caja</div>;
+
+  return <CashOpen />;
 };
 
 export default CashOpening;

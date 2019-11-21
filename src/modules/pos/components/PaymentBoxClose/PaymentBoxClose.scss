@@ -1,0 +1,17 @@
+@import "../global.scss";
+
+.PaymentBoxClose{
+  display: grid;
+  grid-template-rows: 15% 85%;
+  min-height: 100vh;
+  &__header{
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  &__content{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+    justify-content: center;
+  }
+}

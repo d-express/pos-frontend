@@ -12,7 +12,7 @@ import './pos-layout.scss';
 const posLayout = () => {
 
   const [data, setData] = useState(state);
-  const [group, setGroup] = useState('products');
+  const [group, setGroup] = useState(0);
 
   const handlenOrder = (product) => {
     if (product.amount) {
@@ -47,8 +47,31 @@ const posLayout = () => {
     });
   };
 
+  const ConfirmOrder = () => {
+    setData({
+      ...data,
+      historyTransaccion: [...data.historyTransaccion, data.cart],
+    });
+    console.log(data.historyTransaccion);
+    CancelOrden();
+  };
+
   const selectProducts = (id) => {
     setGroup(id);
+  };
+
+  const backProducts = () => {
+    setGroup(0);
+  };
+
+  const bannerGroup = () => {
+    let value = 'grupo';
+    data.productsGroup.map((item) => {
+      if (item.id === group) {
+        value = item.category;
+      }
+    });
+    return value;
   };
 
   return (
@@ -57,7 +80,7 @@ const posLayout = () => {
         <Header />
       </div>
       <div className='PosLaoyout__products'>
-        {group === 'products' ? (
+        {group === 0 ? (
           <div className='container text-center mt-4'>
             <h2>Grupo de productos</h2>
             <div className='row justify-content-center mt-4'>
@@ -69,12 +92,14 @@ const posLayout = () => {
                   onClick={() => selectProducts(group.id)}
                 />
               ))}
-
             </div>
           </div>
         ) :
           (
-            <PosProducts>
+            <PosProducts
+              onClick={() => backProducts()}
+              grupo={bannerGroup()}
+            >
               {data.products.map((item) => (
                 item.idProductGroup === group && (
                   <PosProductsItem
@@ -92,7 +117,11 @@ const posLayout = () => {
           )}
       </div>
       <div className='PosLaoyout__order'>
-        <PosOrder subTotal={data.subtotal} btnCancel={CancelOrden}>
+        <PosOrder
+          subTotal={data.subtotal}
+          btnCancel={CancelOrden}
+          btnPay={ConfirmOrder}
+        >
           {data.cart.map((item) => (
             <PosOrderIteam
               key={item.id}

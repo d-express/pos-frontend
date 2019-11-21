@@ -59,9 +59,12 @@ const Login = (props) => {
               <Link to='X'>
                 <p>¿Olvido su contraseña?</p>
               </Link>
+              <Link className='btn btn-outline-dark' to='/register'>Registrarme</Link>
               <button className='btn btn-danger' type='submit'>Inciar Sesión</button>
             </div>
+            
           </form>
+          
         </div>
       </div>
     </section>

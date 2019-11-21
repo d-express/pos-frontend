@@ -51,7 +51,7 @@ const SelectCashRegisterLayout = (props) => {
               />
               <select
                 name='caja'
-                size='7'
+                size='2'
                 className='FormSelector'
                 onChange={handleSelect}
               >

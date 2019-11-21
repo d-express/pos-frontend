@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Pos-order-layOut.scss';
 
-const PosOrderLayOut = ({ children, subTotal, btnCancel}) => {
+const PosOrderLayOut = ({ children, subTotal, btnCancel, btnPay, }) => {
+
   return (
     <div className='h-auto PosOrderLayOut'>
       <ul className='nav justify-content-center PosOrderLayOut__icons'>
@@ -20,12 +21,30 @@ const PosOrderLayOut = ({ children, subTotal, btnCancel}) => {
             <i className='iconsminds-tag' />
           </a>
         </li>
-        <li className='nav-item'>
-          <a className='nav-link' href='#'>
-            <i className='simple-icon-options' />
-          </a>
-        </li>
       </ul>
+      <div className='PosOrderLayOut__client container'>
+        <form className='row text-center'>
+          <h6 className='col-12'>Informción Cliente</h6>
+          <div className='FormContainer col-4 p-0'>
+            <input
+              name='idClient'
+              className='FormInput'
+              type='text'
+              placeholder='Identificacion'
+              required
+            />
+          </div>
+          <div className='FormContainer col-8 p-0'>
+            <input
+              name='nameClient'
+              className='FormInput'
+              type='text'
+              placeholder='Nombres y Apellidos'
+              required
+            />
+          </div>
+        </form>
+      </div>
       <div className='d-flex flex-column PosOrderLayOut__content justify-content-start'>
         {children}
       </div>
@@ -43,8 +62,24 @@ const PosOrderLayOut = ({ children, subTotal, btnCancel}) => {
           <span className='mr-0'>{subTotal + (subTotal * 0.19)}</span>
         </div>
         <div className='d-flex'>
-          <button className='mb-2 btn btn-secondary btn' type='button' onClick={btnCancel}><span>Cancelar</span></button>
-          <button className='ml-2 mb-2 btn btn-success btn-block' type='button'><span>Pagar</span></button>
+          <button
+            className='mb-2 btn btn-secondary btn'
+            type='button'
+            onClick={btnCancel}
+          >
+            <span>
+              Cancelar
+            </span>
+          </button>
+          <button
+            className='ml-2 mb-2 btn btn-success btn-block'
+            type='button'
+            onClick={btnPay}
+          >
+            <span>
+              Pagar
+            </span>
+          </button>
         </div>
       </div>
     </div>
