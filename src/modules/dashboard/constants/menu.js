@@ -12,6 +12,12 @@ const data = [
     to: '/dashboard/sales',
   },
   {
+    id: 'shopping',
+    icon: 'iconsminds-basket-coins',
+    label: 'Compras',
+    to: '/dashboard/shopping',
+  },
+  {
     id: 'inventories',
     icon: 'iconsminds-box-close',
     label: 'Inventarios',

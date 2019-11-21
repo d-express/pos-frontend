@@ -1,0 +1,22 @@
+@import "../../../../assets/styles/bootstrap/base.scss";
+
+.welcome {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    .icon-button {
+      &.large {
+        width: 66px;
+        height: 66px;
+        font-size: 24px;
+      }
+    }
+    .label {
+      font-size: 1rem;
+    }
+  }
+}

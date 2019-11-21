@@ -89,6 +89,7 @@ class Sidebar extends Component {
     }
 
     const selectedlink = document.querySelector('.sub-menu  a.active');
+
     if (selectedlink != null) {
       selectedlink.parentElement.classList.add('active');
       this.setState(
@@ -103,12 +104,16 @@ class Sidebar extends Component {
       const selectedParentNoSubItem = document.querySelector(
         '.main-menu  li a.active'
       );
+
       if (selectedParentNoSubItem != null) {
+        const { location, match, } = this.props;
+        let parentMenu = location.pathname.substring(match.path.length + 1);
+        if (parentMenu === '') {
+          parentMenu = selectedParentNoSubItem.getAttribute('data-flag');
+        }
         this.setState(
           {
-            selectedParentMenu: selectedParentNoSubItem.getAttribute(
-              'data-flag'
-            ),
+            selectedParentMenu: parentMenu,
           },
           callback
         );
@@ -297,9 +302,4 @@ const mapActionToProps = {
   changeSelectedMenuHasSubItems,
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapActionToProps
-  )(Sidebar)
-);
+export default withRouter(connect(mapStateToProps, mapActionToProps)(Sidebar));

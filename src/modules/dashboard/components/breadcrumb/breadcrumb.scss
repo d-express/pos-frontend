@@ -1,0 +1,23 @@
+@import "../../../../assets/styles/bootstrap/base.scss";
+
+.breadcrumb-container {
+  .breadcrumb {
+    padding: 0;
+    @include media-breakpoint-up(lg) {
+      padding: 0.75rem 1rem;
+    }
+  }
+}
+
+.breadcrumb {
+  background-color: transparent !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.breadcrumb-item {
+  text-transform: capitalize;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "|";
+}

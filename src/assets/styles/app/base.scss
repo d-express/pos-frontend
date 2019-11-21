@@ -84,3 +84,18 @@ p {
   line-height: 1.3rem;
   font-family: $theme-font;
 }
+
+.separator {
+  border-bottom: 1px solid $separator-color;
+}
+
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  
+  @include media-breakpoint-up(md) {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+}
