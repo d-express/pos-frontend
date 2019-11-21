@@ -1,5 +1,5 @@
 import React from 'react';
-import CashOpen from '../components/cashOpening';
+import CashOpen from '../components/cashOpen';
 
 const CashOpening = () => {
 
