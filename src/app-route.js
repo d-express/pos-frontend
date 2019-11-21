@@ -14,7 +14,7 @@ const AppRoute = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={Login} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
         {routes.map((route, index) => (
