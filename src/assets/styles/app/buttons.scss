@@ -30,7 +30,7 @@ button {
 }
 
 .btn {
-  border-radius: 50px;
+  border-radius: 0.3rem;
   outline: initial !important;
   box-shadow: none !important;
   box-shadow: initial !important;
@@ -57,7 +57,7 @@ button {
 .btn-lg,
 .btn-group-lg > .btn,
 .btn-group-sm > .btn {
-  border-radius: 50px;
+  border-radius: 0.3rem;
 }
 
 .btn.default {
@@ -65,14 +65,14 @@ button {
 }
 
 .btn-primary {
-  background-color: $theme-color-1;
-  border-color: $theme-color-1;
+  background-color: $theme-color-4;
+  border-color: $theme-color-4;
   color: $button-text-color;
 
   &:hover {
     color: $button-text-color;
-    background-color: darken($theme-color-1, 16%);
-    border-color: darken($theme-color-1, 16%);
+    background-color: darken($theme-color-4, 16%);
+    border-color: darken($theme-color-4, 16%);
   }
 }
 
@@ -81,8 +81,8 @@ button {
 }
 
 .check-button.btn-primary {
-  background-color: $theme-color-1 !important;
-  border-color: $theme-color-1 !important;
+  background-color: $theme-color-4 !important;
+  border-color: $theme-color-4 !important;
   opacity: 1;
 }
 
@@ -113,7 +113,7 @@ button {
 .dropdown-item:active {
   color: $button-text-color;
   text-decoration: none;
-  background-color: $theme-color-1;
+  background-color: $theme-color-4;
 }
 
 .dropdown-divider {
@@ -123,58 +123,32 @@ button {
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
-  background-color: darken($theme-color-1, 12%);
-  border-color: darken($theme-color-1, 12%);
+  background-color: darken($theme-color-4, 12%);
+  border-color: darken($theme-color-4, 12%);
   color: $button-text-color;
 }
 
 .btn-secondary {
-  background-color: $theme-color-4;
-  border-color: $theme-color-4;
+  background-color: $theme-color-2;
+  border-color: $theme-color-2;
   color: $button-text-color;
 
   &:hover {
     color: $button-text-color;
-    background-color: darken($theme-color-4, 16%);
-    border-color: darken($theme-color-4, 16%);
+    background-color: darken($theme-color-2, 16%);
+    border-color: darken($theme-color-2, 16%);
   }
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active,
 .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
-  background-color: darken($theme-color-4, 12%);
-  border-color: darken($theme-color-4, 12%);
+  background-color: darken($theme-color-2, 12%);
+  border-color: darken($theme-color-2, 12%);
   color: $button-text-color;
 }
 
 .btn-primary.btn-primary-gradient {
-  background: linear-gradient(
-    to right,
-    $theme-color-1,
-    darken($theme-color-1, 15%)
-  );
-
-  &:hover {
-    background: linear-gradient(
-      to right,
-      $theme-color-1,
-      darken($theme-color-1, 8%)
-    );
-  }
-}
-
-.btn-primary-gradient:not(:disabled):not(.disabled):active,
-.btn-primary-gradient:not(:disabled):not(.disabled).active,
-.show > .btn-primary-gradient.dropdown-toggle {
-  background: linear-gradient(
-    to right,
-    $theme-color-1,
-    darken($theme-color-1, 15%)
-  );
-}
-
-.btn-secondary-gradient {
   background: linear-gradient(
     to right,
     $theme-color-4,
@@ -190,13 +164,39 @@ button {
   }
 }
 
+.btn-primary-gradient:not(:disabled):not(.disabled):active,
+.btn-primary-gradient:not(:disabled):not(.disabled).active,
+.show > .btn-primary-gradient.dropdown-toggle {
+  background: linear-gradient(
+    to right,
+    $theme-color-4,
+    darken($theme-color-2, 15%)
+  );
+}
+
+.btn-secondary-gradient {
+  background: linear-gradient(
+    to right,
+    $theme-color-2,
+    darken($theme-color-2, 15%)
+  );
+
+  &:hover {
+    background: linear-gradient(
+      to right,
+      $theme-color-2,
+      darken($theme-color-2, 8%)
+    );
+  }
+}
+
 .btn-secondary-gradient:not(:disabled):not(.disabled):active,
 .btn-secondary-gradient:not(:disabled):not(.disabled).active,
 .show > .btn-secondary-gradient.dropdown-toggle {
   background: linear-gradient(
     to right,
-    $theme-color-4,
-    darken($theme-color-4, 15%)
+    $theme-color-2,
+    darken($theme-color-2, 15%)
   );
 }
 
@@ -266,7 +266,7 @@ button {
   background-color: initial;
 
   &:hover {
-    color: $theme-color-1;
+    color: $theme-color-2;
     background-color: $button-text-color;
   }
 }
@@ -283,13 +283,13 @@ button {
 }
 
 .btn-outline-primary {
-  color: $theme-color-1;
-  border-color: $theme-color-1;
+  color: $theme-color-2;
+  border-color: $theme-color-2;
 
   &:hover {
     color: $foreground-color;
-    background-color: $theme-color-1;
-    border-color: $theme-color-1;
+    background-color: $theme-color-2;
+    border-color: $theme-color-2;
   }
 }
 
@@ -308,18 +308,18 @@ button {
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
-  background-color: $theme-color-1;
-  border-color: $theme-color-1;
+  background-color: $theme-color-2;
+  border-color: $theme-color-2;
   color: $foreground-color;
 }
 
 .btn-outline-secondary {
-  color: $theme-color-4;
-  border-color: $theme-color-4;
+  color: $theme-color-2;
+  border-color: $theme-color-2;
 
   &:hover {
-    background-color: $theme-color-4;
-    border-color: $theme-color-4;
+    background-color: $theme-color-2;
+    border-color: $theme-color-2;
     color: $foreground-color;
   }
 }
@@ -327,8 +327,8 @@ button {
 .btn-outline-secondary:not(:disabled):not(.disabled):active,
 .btn-outline-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-secondary.dropdown-toggle {
-  background-color: $theme-color-4;
-  border-color: $theme-color-4;
+  background-color: $theme-color-2;
+  border-color: $theme-color-2;
   color: $foreground-color;
 }
 
@@ -344,24 +344,24 @@ button {
 }
 
 .btn-header-primary {
-  color: $theme-color-1;
+  color: $theme-color-2;
   border-color: transparent;
   background: transparent;
 
   &:hover {
     background-color: transparent;
-    border-color: $theme-color-1;
+    border-color: $theme-color-2;
   }
 }
 
 .btn-header-secondary {
-  color: $theme-color-4;
+  color: $theme-color-2;
   border-color: transparent;
   background: transparent;
 
   &:hover {
     background-color: transparent;
-    border-color: $theme-color-4;
+    border-color: $theme-color-2;
   }
 }
 
@@ -408,15 +408,15 @@ button {
 
 .btn-primary.disabled,
 .btn-primary:disabled {
-  background-color: $theme-color-1;
-  border-color: $theme-color-1;
+  background-color: $theme-color-2;
+  border-color: $theme-color-2;
   color: $foreground-color;
 }
 
 .btn-secondary.disabled,
 .btn-secondary:disabled {
-  background-color: $theme-color-4;
-  border-color: $theme-color-4;
+  background-color: $theme-color-2;
+  border-color: $theme-color-2;
   color: $foreground-color;
 }
 
@@ -433,11 +433,11 @@ button {
 }
 
 .btn-link {
-  color: $theme-color-1;
+  color: $theme-color-2;
 }
 
 .btn-link:hover {
-  color: rgba($theme-color-1, 0.8);
+  color: rgba($theme-color-2, 0.8);
   text-decoration: underline;
 }
 
@@ -514,13 +514,13 @@ button {
 
   &.btn-primary:disabled {
     opacity: 1;
-    background: darken($theme-color-1, 10%);
-    border-color: darken($theme-color-1, 10%);
+    background: darken($theme-color-2, 10%);
+    border-color: darken($theme-color-2, 10%);
   }
 
   &.btn-secondary:disabled {
     opacity: 1;
-    border-color: darken($theme-color-4, 10%);
+    border-color: darken($theme-color-2, 10%);
   }
 }
 
@@ -559,7 +559,6 @@ button {
 
   @include media-breakpoint-up(sm) {
     float: right;
-    display: block;
   }
 
   .top-right-button {
@@ -568,6 +567,9 @@ button {
     justify-content: center;
     align-items: center;
     margin-right: 5px;
+
+    height: calc(1.5em + 0.75rem + 2px);
+    line-height: 0.1;
 
     @include media-breakpoint-up(sm) {
       display: block;

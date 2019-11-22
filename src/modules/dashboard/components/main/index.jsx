@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import MainLayout from './main-layout';
 
 import Welcome from '../welcome';
+import Categories from '../inventory/categories';
 
 const Main = () => (
   <MainLayout>
@@ -17,9 +18,7 @@ const Main = () => (
       <Route exact path='/dashboard/products'>
         <div>Productos</div>
       </Route>
-      <Route exact path='/dashboard/categories'>
-        <div>Categorías</div>
-      </Route>
+      <Route exact path='/dashboard/categories' component={Categories} />
       <Route exact path='/dashboard/stock'>
         <div>Existencias</div>
       </Route>
