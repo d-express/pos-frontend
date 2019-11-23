@@ -1,10 +1,18 @@
-const INIT_STATE = {};
-
-const reducer = (state = INIT_STATE, action) => {
-  switch (action.type) {
-    default:
-      return { ...state, };
-  }
+const INIT_STATE = {
+  user: localStorage.getItem('user_id'),
+  loading: false,
+  error: ''
 };
 
-export default reducer;
+export default (state = INIT_STATE, action) => {
+  switch (action.type) {
+      case 'LOGIN_USER':
+          return { ...state, loading: true, error: '' };
+      case 'LOGIN_USER_SUCCESS':
+          return { ...state, loading: false, user: action.payload.user, error: '' };
+      case 'LOGIN_USER_FAILURE':
+          return { ...state, loading: false, user: null, error: action.payload.message };
+      default: return { ...state };
+  }
+}
+
