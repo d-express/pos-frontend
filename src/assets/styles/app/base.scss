@@ -92,10 +92,70 @@ p {
 .lead {
   font-size: 1.1rem;
   line-height: 1.6rem;
-  
+
   @include media-breakpoint-up(md) {
     font-size: 1.8rem;
     font-weight: 300;
     line-height: 2rem;
+  }
+}
+
+.view-icon {
+  font-size: 20px;
+  color: $secondary-color;
+
+  &:hover {
+    color: $theme-color-4;
+  }
+
+  &.s {
+    font-size: 18px;
+  }
+}
+
+#displayOptions {
+
+  a {
+    cursor: pointer;
+  }
+
+  a.active i {
+    color: $theme-color-1;
+  }
+
+  button {
+    border-color: $secondary-color;
+    color: $secondary-color;
+
+    &:hover {
+      background-color: $theme-color-4;
+      border-color: $theme-color-4;
+      color: $button-text-color;
+    }
+  }
+
+  .btn-outline-dark:not(:disabled):not(.disabled):active,
+  .btn-outline-dark:not(:disabled):not(.disabled).active,
+  .show > .btn-outline-dark.dropdown-toggle {
+    background-color: $theme-color-4;
+    border-color: $theme-color-4;
+    color: $button-text-color;
+  }
+
+  .view-icon {
+    svg {
+      width: 19px;
+    }
+
+    .view-icon-svg {
+      fill: $secondary-color;
+    }
+
+    &:hover,
+    &.active {
+      .view-icon-svg {
+        fill: $theme-color-4;
+      }
+    }
   }
 }

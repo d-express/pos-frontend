@@ -36,7 +36,7 @@ const WelcomeLayout = ({ match, menuItems, }) => (
                     >
                       <NavLink
                         to={item.to}
-                        className='btn btn-secondary icon-button large m-1'
+                        className='btn btn-primary icon-button large rounded-circle m-1'
                       >
                         <i className={item.icon} />
                       </NavLink>
