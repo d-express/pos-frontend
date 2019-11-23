@@ -1,6 +1,9 @@
 const INIT_STATE = {
   category: [],
   products: [],
+  cart: [],
+  subtotal: 0,
+  tax: 0,
 };
 
 const Pos = (state = INIT_STATE, action) => {
@@ -14,6 +17,20 @@ const Pos = (state = INIT_STATE, action) => {
       return {
         ...state,
         products: action.products,
+      };
+    case 'ADD_CART':
+      return {
+        ...state,
+        cart: [...state.cart, action.product],
+        subtotal: state.subtotal + action.product.price,
+        tax: state.tax + (action.product.price * action.product.tax),
+      };
+    case 'UPDATE_CART':
+      return {
+        ...state,
+        cart: [...state.cart],
+        subtotal: state.subtotal + action.product.price,
+        tax: state.tax + (action.product.price * action.product.tax),
       };
     default:
       return state;

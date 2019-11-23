@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchCategory, fetchProductsCategory } from '../../redux/fetch-actions';
+import { addCard, updateCard } from '../../redux/actions/index';
 import Header from '../header';
 import PosOrder from '../pos-order';
 import PosProducts from '../pos-products/pos-products';
@@ -16,9 +17,14 @@ const posLayout = (props) => {
   const urlImgProduct = 'https://api.dexpress.app/products/image/';
   const {
     category,
+    cart,
+    subtotal,
+    tax,
     fetchCategory,
     products,
     fetchProductsCategory,
+    addCard,
+    updateCard,
   } = props;
 
   const getData = () => {
@@ -31,20 +37,11 @@ const posLayout = (props) => {
   const handlenOrder = (product) => {
     if (product.amount) {
       product.amount += 1;
-      setData({
-        ...data,
-        cart: [...data.cart],
-        subtotal: data.subtotal + product.price,
-      });
+      updateCard(product);
     } else {
       product.amount = 1;
-      setData({
-        ...data,
-        cart: [...data.cart, product],
-        subtotal: data.subtotal + product.price,
-      });
+      addCard(product);
     }
-
   };
   const CancelOrden = () => {
     // eslint-disable-next-line array-callback-return
@@ -132,13 +129,14 @@ const posLayout = (props) => {
       {group !== 0 && (
         <div className='PosLaoyout__order'>
           <PosOrder
-            subTotal={data.subtotal}
+            subTotal={subtotal}
+            tax={tax}
             btnCancel={CancelOrden}
             btnPay={ConfirmOrder}
           >
-            {data.cart.map((item) => (
+            {cart.map((item) => (
               <PosOrderIteam
-                key={item.id}
+                key={item._id}
                 img={urlImgProduct + item._id}
                 name={item.name}
                 cant={item.amount}
@@ -158,12 +156,17 @@ const mapStateToProps = (state) => {
     ...state,
     category: state.pos.category,
     products: state.pos.products,
+    cart: state.pos.cart,
+    subtotal: state.pos.subtotal,
+    tax: state.pos.tax,
   };
 };
 
 const mapActionToProps = {
   fetchCategory,
   fetchProductsCategory,
+  addCard,
+  updateCard,
 };
 
 export default connect(mapStateToProps, mapActionToProps)(posLayout);

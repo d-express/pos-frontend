@@ -8,5 +8,15 @@ const getProductsCategory = (products) => ({
   products,
 });
 
-export { getGroupProducts, getProductsCategory };
+const addCard = (product) => ({
+  type: 'ADD_CART',
+  product,
+});
+
+const updateCard = (product) => ({
+  type: 'UPDATE_CART',
+  product,
+});
+
+export { getGroupProducts, getProductsCategory, addCard, updateCard };
 

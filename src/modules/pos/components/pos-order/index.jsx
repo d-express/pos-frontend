@@ -1,8 +1,13 @@
 import React from 'react';
 import PosOrderLayout from './pos-order-layout';
 
-const PosOrder = ({ children, subTotal, btnCancel, btnPay, }) => (
-  <PosOrderLayout subTotal={subTotal} btnCancel={btnCancel} btnPay={btnPay}>
+const PosOrder = ({ children, subTotal, tax, btnCancel, btnPay, }) => (
+  <PosOrderLayout
+    subTotal={subTotal}
+    tax={tax}
+    btnCancel={btnCancel}
+    btnPay={btnPay}
+  >
     {children}
   </PosOrderLayout>
 );
