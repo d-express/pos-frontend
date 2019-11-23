@@ -1,20 +1,14 @@
-const PosGroup = (state, action) => {
-  switch (action.type) {
-    case 'ADD_TO_CART':
-      return {
-        ...state,
-        cart: [...state.cart, action.payload],
-      };
-    case 'UPDATE_TO_CART':
-      return {
-        ...state,
-        cart: [...state.cart],
-      };
-    case 'DELETE_TO_CART':
+const _state = {
+  _id: 1234,
+  name: 'Pizza',
+};
 
+const PosGroup = (state = _state, action) => {
+  switch (action.type) {
+    case 'GET_GROUP_PRODUCTS':
       return {
         ...state,
-        cart: state.cart.filter((items) => items.id !== action.payload),
+        category: action.payload,
       };
     default:
       return state;

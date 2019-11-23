@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import fetchCategory from '../../redux/fech-actions';
 import Header from '../header';
 import PosOrder from '../pos-order';
 import PosProducts from '../pos-products/pos-products';
@@ -138,4 +140,12 @@ const posLayout = () => {
   );
 };
 
-export default posLayout;
+const mapActionToProps = {
+  fetchCategory,
+};
+
+const mapStateToProps = ({ message, }) => {
+  return { message, };
+};
+
+export default connect(mapStateToProps, mapActionToProps)(posLayout);
