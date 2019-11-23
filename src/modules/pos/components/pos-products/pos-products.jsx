@@ -16,7 +16,7 @@ const PosProducts = ({ children, onClick, grupo, }) => {
         <input
           name='searchKeyword'
           id='searchKeyword'
-          placeholder='Buscar caja'
+          placeholder='Buscar productos'
           type='search'
           className='FormInput col-10'
           onChange={(text) => handleSearch(text)}
