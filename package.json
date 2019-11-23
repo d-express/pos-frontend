@@ -41,7 +41,7 @@
     "react-router-dom": "^5.1.2",
     "reactstrap": "^8.1.1",
     "redux": "^4.0.4",
-    "redux-thunks": "^1.0.0"
+    "redux-thunk": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
