@@ -18,5 +18,16 @@ const updateCard = (product) => ({
   product,
 });
 
-export { getGroupProducts, getProductsCategory, addCard, updateCard };
+const payCard = (cart) => ({
+  type: 'PAY_CART',
+  cart,
+});
+
+export {
+  getGroupProducts,
+  getProductsCategory,
+  addCard,
+  updateCard,
+  payCard
+};
 
