@@ -3,7 +3,7 @@ import {
   getGroupProducts,
 } from './actions';
 
-function fetchCategory() {
+export function fetchCategory() {
   return (dispatch) => {
     const token = sessionStorage.getItem('token');
     axios({
@@ -27,4 +27,23 @@ function fetchCategory() {
   };
 }
 
-export default fetchCategory;
+export function fetchProductsCategory() {
+  return (dispatch) => {
+    axios({
+      url: 'https://api.dexpress.app/products',
+      method: 'get',
+    })
+      .then((res) => {
+        if (res.error) {
+          throw res.error;
+        }
+        //logica cookie
+        dispatch(getGroupProducts(res.data));
+        return res;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+}
+

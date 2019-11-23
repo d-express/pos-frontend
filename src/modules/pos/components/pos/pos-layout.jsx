@@ -1,21 +1,26 @@
 /* eslint-disable no-param-reassign */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import fetchCategory from '../../redux/fech-actions';
+import { fetchCategory, fetchProductsCategory } from '../../redux/fetch-actions';
 import Header from '../header';
 import PosOrder from '../pos-order';
 import PosProducts from '../pos-products/pos-products';
 import PosProductsItem from '../pos-products-item/pos-products-item';
 import PosOrderIteam from '../pos-order-item/pos-order-item';
 import PosGroup from '../pos-group';
-import state from '../../../../mocks/state';
+import state1 from '../../../../mocks/state';
 import './pos-layout.scss';
 
-const posLayout = () => {
+const posLayout = (props) => {
+  const urlImgCategory = 'https://api.dexpress.app/category/image/';
+  const { category, fetchCategory, } = props;
 
-  const [data, setData] = useState(state);
+  const getData = () => {
+    fetchCategory();
+  };
+  const [inicialState, setInicialState] = useState(getData);
+  const [data, setData] = useState(state1);
   const [group, setGroup] = useState(0);
-
   const handlenOrder = (product) => {
     if (product.amount) {
       product.amount += 1;
@@ -34,7 +39,6 @@ const posLayout = () => {
     }
 
   };
-
   const CancelOrden = () => {
     // eslint-disable-next-line array-callback-return
     data.products.map((item) => {
@@ -58,8 +62,8 @@ const posLayout = () => {
     CancelOrden();
   };
 
-  const selectProducts = (id) => {
-    setGroup(id);
+  const selectProducts = (nameCategoy) => {
+    setGroup(nameCategoy);
   };
 
   const backProducts = () => {
@@ -86,12 +90,12 @@ const posLayout = () => {
           <div className='container text-center mt-4'>
             <h2>Grupo de productos</h2>
             <div className='row justify-content-center mt-4'>
-              {data.productsGroup.map((group) => (
+              {category.map((group) => (
                 <PosGroup
-                  key={group.id}
-                  name={group.category}
-                  img={group.img}
-                  onClick={() => selectProducts(group.id)}
+                  key={group._id}
+                  name={group.name}
+                  img={urlImgCategory + group._id}
+                  onClick={() => selectProducts(group.name)}
                 />
               ))}
             </div>
@@ -118,34 +122,40 @@ const posLayout = () => {
             </PosProducts>
           )}
       </div>
-      <div className='PosLaoyout__order'>
-        <PosOrder
-          subTotal={data.subtotal}
-          btnCancel={CancelOrden}
-          btnPay={ConfirmOrder}
-        >
-          {data.cart.map((item) => (
-            <PosOrderIteam
-              key={item.id}
-              img={item.img}
-              name={item.name}
-              cant={item.amount}
-              price={item.price * item.amount}
-              type={item.type}
-            />
-          ))}
-        </PosOrder>
-      </div>
+      {group !== 0 && (
+        <div className='PosLaoyout__order'>
+          <PosOrder
+            subTotal={data.subtotal}
+            btnCancel={CancelOrden}
+            btnPay={ConfirmOrder}
+          >
+            {data.cart.map((item) => (
+              <PosOrderIteam
+                key={item.id}
+                img={item.img}
+                name={item.name}
+                cant={item.amount}
+                price={item.price * item.amount}
+                type={item.type}
+              />
+            ))}
+          </PosOrder>
+        </div>
+      )}
     </section>
   );
+};
+const mapStateToProps = (state) => {
+
+  return {
+    ...state,
+    category: state.pos.category,
+  };
 };
 
 const mapActionToProps = {
   fetchCategory,
-};
-
-const mapStateToProps = ({ message, }) => {
-  return { message, };
+  fetchProductsCategory,
 };
 
 export default connect(mapStateToProps, mapActionToProps)(posLayout);

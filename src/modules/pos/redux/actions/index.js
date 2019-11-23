@@ -1,1 +1,1 @@
-export * from './PosGroup';
+export * from './category';
