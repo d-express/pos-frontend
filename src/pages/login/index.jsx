@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import LogoCliente from '../../assets/images/pizza-logo.png';
 import Logo from '../../assets/images/dexpress.png';
+import fetchUser from '../../redux/auth/fetch_actions'; 
 import './login.scss';
 
 const Login = (props) => {
   const [form, setForm] = useState({
-    email: '',
+    userLogin: '',
   });
 
   const handleInput = (event) => {
@@ -18,7 +20,7 @@ const Login = (props) => {
 
   const handlSubmit = (event) => {
     event.preventDefault();
-    props.history.push('/');
+    props.fetchUser(form, props.history);
   };
 
   return (
@@ -38,7 +40,7 @@ const Login = (props) => {
             <div className='FormContainer'>
               <small className='FormLabel'>Email</small>
               <input
-                name='email'
+                name='userLogin'
                 className='FormInput'
                 type='email'
                 onChange={handleInput}
@@ -62,13 +64,19 @@ const Login = (props) => {
               <Link className='btn btn-outline-dark' to='/register'>Registrarme</Link>
               <button className='btn btn-danger' type='submit'>Inciar Sesión</button>
             </div>
-            
           </form>
-          
         </div>
       </div>
     </section>
   );
 };
 
-export default Login;
+const mapActionToProps = {
+  fetchUser
+};
+
+const mapStateToProps = ({message}) => {
+  return {message};
+}
+
+export default connect(mapStateToProps, mapActionToProps)(Login);
