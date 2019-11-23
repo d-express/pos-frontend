@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LogoCliente from '../../assets/images/pizza-logo.png';
 import Logo from '../../assets/images/dexpress.png';
-import fetchUser from '../../redux/auth/fetch_actions'; 
+import fetchUser from '../../redux/auth/fetch_actions';
 import './login.scss';
 
 const Login = (props) => {
@@ -72,11 +72,11 @@ const Login = (props) => {
 };
 
 const mapActionToProps = {
-  fetchUser
+  fetchUser,
 };
 
-const mapStateToProps = ({message}) => {
-  return {message};
-}
+const mapStateToProps = ({ message, }) => {
+  return { message, };
+};
 
 export default connect(mapStateToProps, mapActionToProps)(Login);
