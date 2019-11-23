@@ -8,8 +8,8 @@ const PosProductsItem = ({ img, name, type, description, price, onClick, }) => {
       <div className='d-none d-md-block'>
         <div className='card text-white card-rounded container'>
           <div className='row'>
-            <div className='position-relative sm-2'>
-              <img alt={name} src={img} className='card-img card-rounded ' />
+            <div className='sm-2'>
+              <img alt={name} src={img} className='card-rounded img-fluid ' />
             </div>
             <div className='card-img-overlay card-rounded sm-10'>
               <div className='card-title mb-0'>{name}</div>

@@ -13,11 +13,18 @@ import './pos-layout.scss';
 
 const posLayout = (props) => {
   const urlImgCategory = 'https://api.dexpress.app/category/image/';
-  const { category, fetchCategory, } = props;
+  const urlImgProduct = 'https://api.dexpress.app/products/image/';
+  const {
+    category,
+    fetchCategory,
+    products,
+    fetchProductsCategory,
+  } = props;
 
   const getData = () => {
     fetchCategory();
   };
+  // eslint-disable-next-line no-unused-vars
   const [inicialState, setInicialState] = useState(getData);
   const [data, setData] = useState(state1);
   const [group, setGroup] = useState(0);
@@ -62,8 +69,9 @@ const posLayout = (props) => {
     CancelOrden();
   };
 
-  const selectProducts = (nameCategoy) => {
-    setGroup(nameCategoy);
+  const selectProducts = (id) => {
+    fetchProductsCategory(id);
+    setGroup(id);
   };
 
   const backProducts = () => {
@@ -72,9 +80,10 @@ const posLayout = (props) => {
 
   const bannerGroup = () => {
     let value = 'grupo';
-    data.productsGroup.map((item) => {
-      if (item.id === group) {
-        value = item.category;
+    // eslint-disable-next-line array-callback-return
+    category.map((item) => {
+      if (item._id === group) {
+        value = item.name;
       }
     });
     return value;
@@ -95,7 +104,7 @@ const posLayout = (props) => {
                   key={group._id}
                   name={group.name}
                   img={urlImgCategory + group._id}
-                  onClick={() => selectProducts(group.name)}
+                  onClick={() => selectProducts(group._id)}
                 />
               ))}
             </div>
@@ -106,18 +115,16 @@ const posLayout = (props) => {
               onClick={() => backProducts()}
               grupo={bannerGroup()}
             >
-              {data.products.map((item) => (
-                item.idProductGroup === group && (
-                  <PosProductsItem
-                    key={item.id}
-                    img={item.img}
-                    name={item.name}
-                    type={item.type}
-                    description={item.description}
-                    price={item.price}
-                    onClick={() => handlenOrder(item)}
-                  />
-                )
+              {products.map((item) => (
+                <PosProductsItem
+                  key={item._id}
+                  img={urlImgProduct + item._id}
+                  name={item.name}
+                  type={item.type}
+                  description={item.description}
+                  price={item.price + (item.price * item.tax)}
+                  onClick={() => handlenOrder(item)}
+                />
               ))}
             </PosProducts>
           )}
@@ -132,7 +139,7 @@ const posLayout = (props) => {
             {data.cart.map((item) => (
               <PosOrderIteam
                 key={item.id}
-                img={item.img}
+                img={urlImgProduct + item._id}
                 name={item.name}
                 cant={item.amount}
                 price={item.price * item.amount}
@@ -150,6 +157,7 @@ const mapStateToProps = (state) => {
   return {
     ...state,
     category: state.pos.category,
+    products: state.pos.products,
   };
 };
 

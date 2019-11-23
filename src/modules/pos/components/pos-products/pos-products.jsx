@@ -8,9 +8,9 @@ const PosProducts = ({ children, onClick, grupo, }) => {
   };
 
   return (
-    <section className='PosProducts'>
-      <div className='FormContainer'>
-        <button type='button' className='btn btn-white' onClick={onClick}>
+    <section className='PosProducts container'>
+      <div className='FormContainer row'>
+        <button type='button' className='btn btn-white col-1' onClick={onClick}>
           <i className='simple-icon-arrow-left' />
         </button>
         <input
@@ -18,7 +18,7 @@ const PosProducts = ({ children, onClick, grupo, }) => {
           id='searchKeyword'
           placeholder='Buscar caja'
           type='search'
-          className='FormInput'
+          className='FormInput col-10'
           onChange={(text) => handleSearch(text)}
         />
       </div>

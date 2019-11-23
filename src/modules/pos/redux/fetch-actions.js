@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
   getGroupProducts,
+  getProductsCategory,
 } from './actions';
 
 export function fetchCategory() {
@@ -27,10 +28,10 @@ export function fetchCategory() {
   };
 }
 
-export function fetchProductsCategory() {
+export function fetchProductsCategory(id) {
   return (dispatch) => {
     axios({
-      url: 'https://api.dexpress.app/products',
+      url: `https://api.dexpress.app/products/category/${id}`,
       method: 'get',
     })
       .then((res) => {
@@ -38,7 +39,7 @@ export function fetchProductsCategory() {
           throw res.error;
         }
         //logica cookie
-        dispatch(getGroupProducts(res.data));
+        dispatch(getProductsCategory(res.data));
         return res;
       })
       .catch((error) => {
