@@ -9,7 +9,7 @@ const Modal = ({ children, viewModal, title, }) => {
     <section>
       {modalView && (
         <div className='Modal'>
-          <div className='Modal__content'>
+          <div className='Modal__content p-1'>
             <button type='button' onClick={() => view()} className='Modal__close btn p-0 border-0 btn-outline-danger'>
               <i className='iconsminds-close' />
             </button>

@@ -135,7 +135,7 @@ const posLayout = (props) => {
                         img={urlImgProduct + item._id}
                         name={sizeProducts.description}
                         cant={item.amount}
-                        price={item.value * item.amount}
+                        price={(sizeProducts.value * item.tax) + sizeProducts.value}
                         type={item.type}
                       />
                     ))}
