@@ -32,6 +32,13 @@ const Pos = (state = INIT_STATE, action) => {
         subtotal: state.subtotal + action.product.price,
         tax: state.tax + (action.product.price * action.product.tax),
       };
+    case 'CANCEL_CART':
+      return {
+        ...state,
+        cart: [],
+        subtotal: 0,
+        tax: 0,
+      };
     default:
       return state;
   }

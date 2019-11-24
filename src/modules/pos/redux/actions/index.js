@@ -23,11 +23,17 @@ const payCard = (cart) => ({
   cart,
 });
 
+const cancelCard = (payload) => ({
+  type: 'CANCEL_CART',
+  payload,
+});
+
 export {
   getGroupProducts,
   getProductsCategory,
   addCard,
   updateCard,
-  payCard
+  payCard,
+  cancelCard,
 };
 
