@@ -9,7 +9,7 @@ const PosProducts = ({ children, onClick, grupo, }) => {
 
   return (
     <section className='PosProducts container'>
-      <div className='FormContainer row'>
+      <div className='row'>
         <button type='button' className='btn btn-white col-1' onClick={onClick}>
           <i className='simple-icon-arrow-left' />
         </button>
@@ -25,8 +25,8 @@ const PosProducts = ({ children, onClick, grupo, }) => {
       <div className='row PosProducts__items pb-4'>
         {children}
       </div>
-      <div className='PosProducts__group'>
-        {grupo}
+      <div className='row PosProducts__group'>
+        <h2>{grupo}</h2>
       </div>
     </section>
   );

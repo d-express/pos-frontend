@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchCategory, fetchProductsCategory } from '../../redux/fetch-actions';
-import { addCard, updateCard } from '../../redux/actions/index';
+import { addCard, updateCard, cancelCard } from '../../redux/actions/index';
 import Header from '../header';
 import PosOrder from '../pos-order';
 import PosProducts from '../pos-products/pos-products';
@@ -24,6 +24,7 @@ const posLayout = (props) => {
     products,
     fetchProductsCategory,
     addCard,
+    cancelCard,
     updateCard,
   } = props;
 
@@ -33,7 +34,7 @@ const posLayout = (props) => {
   // eslint-disable-next-line no-unused-vars
   const [inicialState, setInicialState] = useState(getData);
   const [data, setData] = useState(state1);
-  const [group, setGroup] = useState(0);
+  const [group, setGroup] = useState({ id: 0, name: 'Grupo de productos', });
   const handlenOrder = (product) => {
     if (product.amount) {
       product.amount += 1;
@@ -45,16 +46,12 @@ const posLayout = (props) => {
   };
   const CancelOrden = () => {
     // eslint-disable-next-line array-callback-return
-    data.products.map((item) => {
+    products.map((item) => {
       if (item.amount) {
         delete item.amount;
       }
     });
-    setData({
-      ...data,
-      cart: [],
-      subtotal: 0,
-    });
+    cancelCard();
   };
 
   const ConfirmOrder = () => {
@@ -66,24 +63,19 @@ const posLayout = (props) => {
     CancelOrden();
   };
 
-  const selectProducts = (id) => {
+  const selectProducts = (id, name) => {
     fetchProductsCategory(id);
-    setGroup(id);
+    setGroup({
+      id,
+      name,
+    });
   };
 
   const backProducts = () => {
-    setGroup(0);
-  };
-
-  const bannerGroup = () => {
-    let value = 'grupo';
-    // eslint-disable-next-line array-callback-return
-    category.map((item) => {
-      if (item._id === group) {
-        value = item.name;
-      }
+    setGroup({
+      id: 0,
+      name: 'Grupo de productos',
     });
-    return value;
   };
 
   return (
@@ -92,61 +84,58 @@ const posLayout = (props) => {
         <Header />
       </div>
       <div className='PosLaoyout__products'>
-        {group === 0 ? (
-          <div className='container text-center mt-4'>
-            <h2>Grupo de productos</h2>
-            <div className='row justify-content-center mt-4'>
-              {category.map((group) => (
-                <PosGroup
-                  key={group._id}
-                  name={group.name}
-                  img={urlImgCategory + group._id}
-                  onClick={() => selectProducts(group._id)}
-                />
-              ))}
+        <PosProducts
+          onClick={() => backProducts()}
+          grupo={group.name}
+        >
+          {group.id === 0 ? (
+            <div className='container text-center mt-2'>
+              <div className='row justify-content-center'>
+                {category.map((group) => (
+                  <PosGroup
+                    key={group._id}
+                    name={group.name}
+                    img={urlImgCategory + group._id}
+                    onClick={() => selectProducts(group._id, group.name)}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-        ) :
-          (
-            <PosProducts
-              onClick={() => backProducts()}
-              grupo={bannerGroup()}
-            >
-              {products.map((item) => (
-                <PosProductsItem
-                  key={item._id}
-                  img={urlImgProduct + item._id}
-                  name={item.name}
-                  type={item.type}
-                  description={item.description}
-                  price={item.price + (item.price * item.tax)}
-                  onClick={() => handlenOrder(item)}
-                />
-              ))}
-            </PosProducts>
-          )}
-      </div>
-      {group !== 0 && (
-        <div className='PosLaoyout__order'>
-          <PosOrder
-            subTotal={subtotal}
-            tax={tax}
-            btnCancel={CancelOrden}
-            btnPay={ConfirmOrder}
-          >
-            {cart.map((item) => (
-              <PosOrderIteam
+          ) : (
+            products.map((item) => (
+              <PosProductsItem
                 key={item._id}
                 img={urlImgProduct + item._id}
                 name={item.name}
-                cant={item.amount}
-                price={item.price * item.amount}
                 type={item.type}
+                description={item.description}
+                price={item.price + (item.price * item.tax)}
+                onClick={() => handlenOrder(item)}
               />
-            ))}
-          </PosOrder>
-        </div>
-      )}
+            ))
+          )}
+        </PosProducts>
+      </div>
+      <div className='PosLaoyout__order'>
+        <PosOrder
+          subTotal={subtotal}
+          tax={tax}
+          btnCancel={() => CancelOrden()}
+          btnPay={ConfirmOrder}
+        >
+          {cart.map((item) => (
+            <PosOrderIteam
+              key={item._id}
+              img={urlImgProduct + item._id}
+              name={item.name}
+              cant={item.amount}
+              price={item.price * item.amount}
+              type={item.type}
+            />
+          ))}
+        </PosOrder>
+      </div>
+      )
     </section>
   );
 };
@@ -167,6 +156,7 @@ const mapActionToProps = {
   fetchProductsCategory,
   addCard,
   updateCard,
+  cancelCard,
 };
 
 export default connect(mapStateToProps, mapActionToProps)(posLayout);
