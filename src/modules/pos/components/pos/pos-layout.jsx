@@ -10,7 +10,9 @@ import PosProductsItem from '../pos-products-item/pos-products-item';
 import PosOrderIteam from '../pos-order-item/pos-order-item';
 import PosGroup from '../pos-group';
 import state1 from '../../../../mocks/state';
+
 import './pos-layout.scss';
+import Modal from '../modal';
 
 const posLayout = (props) => {
   const urlImgCategory = 'https://api.dexpress.app/category/image/';
@@ -43,6 +45,9 @@ const posLayout = (props) => {
       product.amount = 1;
       addCard(product);
     }
+  };
+  const priceVariation = () => {
+
   };
   const CancelOrden = () => {
     // eslint-disable-next-line array-callback-return
@@ -103,15 +108,40 @@ const posLayout = (props) => {
             </div>
           ) : (
             products.map((item) => (
-              <PosProductsItem
-                key={item._id}
-                img={urlImgProduct + item._id}
-                name={item.name}
-                type={item.type}
-                description={item.description}
-                price={item.price + (item.price * item.tax)}
-                onClick={() => handlenOrder(item)}
-              />
+              item.price ? (
+                <PosProductsItem
+                  key={item._id}
+                  img={urlImgProduct + item._id}
+                  name={item.name}
+                  type={item.type}
+                  description={item.description}
+                  price={item.price + (item.price * item.tax)}
+                  onClick={() => handlenOrder(item)}
+                />
+              ) : (
+                <div className='w-100'>
+                  <PosProductsItem
+                    key={item._id}
+                    img={urlImgProduct + item._id}
+                    name={item.name}
+                    type={item.type}
+                    description={item.description}
+                    onClick={() => handlenOrder(item)}
+                  />
+                  <Modal viewModal='true' title={item.name}>
+                    {item.prices.map((sizeProducts) => (
+                      <PosOrderIteam
+                        key={item._id}
+                        img={urlImgProduct + item._id}
+                        name={sizeProducts.description}
+                        cant={item.amount}
+                        price={item.value * item.amount}
+                        type={item.type}
+                      />
+                    ))}
+                  </Modal>
+                </div>
+              )
             ))
           )}
         </PosProducts>

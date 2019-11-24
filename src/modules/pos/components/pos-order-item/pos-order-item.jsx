@@ -1,17 +1,20 @@
 import React from 'react';
 
-const PosOrderIteam = ({ img, name, cant, price, type, }) => (
-  <div className='d-flex'>
-    <img alt={name} src={img} className='imgSmall' />
-    <div className='d-flex flex-column ml-2'>
-      <div className='list-item-heading text-truncate'>
-        <h4 className='m-0'>{name}</h4>
+const PosOrderIteam = ({ img, name, cant, price, type, onClick, }) => (
+  <div className='d-flex PosProductsItem__list w-100' role='button' tabIndex={0} onClick={onClick}>
+    <div className='d-flex flex-row card'>
+      <img
+        alt={name}
+        src={img}
+        className='list-thumbnail border-0 card-img-left imgSmall'
+      />
+      <div className='card-body d-flex align-items-center p-0'>
+          <h4>{cant}</h4>
+          <span className='text-dark font-weight-bold'>{`$ ${price.toLocaleString('de-DE')}`}</span>
+        <p className='text-muted mb-1 text-small d-flex justify-content-between'>
+          <small className='px-2'>{type}</small>
+        </p>
       </div>
-      <p className='text-muted mb-1 text-small d-flex justify-content-between'>
-        <span>{cant}</span>
-        <small className='px-2'>{type}</small>
-        <span className='text-dark font-weight-bold'>{`$ ${price.toLocaleString('de-DE')}`}</span>
-      </p>
     </div>
   </div>
 );
