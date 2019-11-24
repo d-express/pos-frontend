@@ -28,7 +28,7 @@ export function fetchUser(user, history) {
 
 export function fetchRegister(user, history) {
   return (dispatch) => {
-    axios.post('https://api.dexpress.app/auth/register', { user })
+    axios.post('https://api.dexpress.app/auth/register', user )
       .then((res) => {
         if (res.error) {
           throw res.error;
