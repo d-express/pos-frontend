@@ -13,11 +13,6 @@ const PosOrderLayOut = ({ children, subTotal, tax, btnCancel, btnPay, }) => {
         </li>
         <li className='nav-item'>
           <a className='nav-link' href='#'>
-            <i className='iconsminds-repeat' />
-          </a>
-        </li>
-        <li className='nav-item'>
-          <a className='nav-link' href='#'>
             <i className='iconsminds-tag' />
           </a>
         </li>
@@ -53,13 +48,13 @@ const PosOrderLayOut = ({ children, subTotal, tax, btnCancel, btnPay, }) => {
           <p>
             Impuesto
           </p>
-          <span className='mr-0'>{tax}</span>
+          <span className='mr-0'>{`$ ${tax.toLocaleString('de-DE')}`}</span>
         </div>
         <div className='order-total d-flex justify-content-between'>
           <p>
             Total
           </p>
-          <span className='mr-0'>{subTotal + tax}</span>
+          <span className='mr-0'>{`$ ${(subTotal + tax).toLocaleString('de-DE')}`}</span>
         </div>
         <div className='d-flex'>
           <button

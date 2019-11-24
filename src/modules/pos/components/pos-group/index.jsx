@@ -9,8 +9,8 @@ const PosGroup = ({ name, img, onClick, }) => {
             <div className='position-relative sm-2 h-100'>
               <img alt={name} src={img} className='card-img card-rounded w-100 h-100' />
             </div>
-            <div className='card-img-overlay card-rounded sm-10'>
-              <div className='card-title mb-0'>{name}</div>
+            <div className='card-img-overlay card-rounded sm-10 d-flex justify-content-center align-items-center'>
+              <h2>{name}</h2>
             </div>
           </div>
         </div>
