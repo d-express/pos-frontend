@@ -9,6 +9,10 @@ export default (state = INIT_STATE, action) => {
       return { ...state, user: action.payload, error: '', };
     case 'LOGIN_USER_FAILURE':
       return { ...state, user: null, error: action.payload.message, };
+    case 'REGISTER_USER_SUCCESS':
+      return { ...state, user: action.payload, error: '', };
+    case 'REGISTER_USER_FAILURE':
+      return { ...state, user: null, error: action.payload.message, };
     default: return { ...state, };
   }
 };

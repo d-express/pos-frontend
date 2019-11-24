@@ -1,10 +1,12 @@
 import axios from 'axios';
 import {
   loginUserSuccess,
-  loginUserFailure
+  loginUserFailure,
+  registerUserSuccess,
+  registerUserFailure,
 } from './actions';
 
-function fetchUser(user, history) {
+export function fetchUser(user, history) {
   return (dispatch) => {
     axios.post('https://api.dexpress.app/auth/login', user)
       .then((res) => {
@@ -24,4 +26,21 @@ function fetchUser(user, history) {
   };
 }
 
-export default fetchUser;
+export function fetchRegister(user, history) {
+  return (dispatch) => {
+    axios.post('https://api.dexpress.app/auth/register', { user })
+      .then((res) => {
+        if (res.error) {
+          throw res.error;
+        }
+        //logica cookie
+        dispatch(registerUserSuccess(res.data.user));
+        history.push('/');
+        return res;
+      })
+      .catch((error) => {
+        console.log(error);
+        dispatch(registerUserFailure(error));
+      });
+  };
+};

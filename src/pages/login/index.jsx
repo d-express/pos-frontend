@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LogoCliente from '../../assets/images/pizza-logo.png';
 import Logo from '../../assets/images/dexpress.png';
-import fetchUser from '../../redux/auth/fetch_actions';
+import { fetchUser } from '../../redux/auth/fetch_actions';
 import './login.scss';
 
 const Login = (props) => {
