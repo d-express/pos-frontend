@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PosOrderIteam = ({ img, name, cant, price, type, onClick, }) => (
-  <div className='d-flex PosProductsItem__list w-100' role='button' tabIndex={0} onClick={onClick}>
+  <div className='d-flex PosProductsItem__list w-100 m-1' role='button' tabIndex={0} onClick={onClick}>
     <div className='d-flex flex-row card w-100'>
       <img
         alt={name}

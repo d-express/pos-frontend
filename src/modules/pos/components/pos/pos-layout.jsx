@@ -36,6 +36,7 @@ const posLayout = (props) => {
   // eslint-disable-next-line no-unused-vars
   const [inicialState, setInicialState] = useState(getData);
   const [data, setData] = useState(state1);
+  const [modalProducts, setModalProducts] = useState(false);
   const [group, setGroup] = useState({ id: 0, name: 'Grupo de productos', });
   const handlenOrder = (product) => {
     if (product.amount) {
@@ -46,9 +47,16 @@ const posLayout = (props) => {
       addCard(product);
     }
   };
-  const priceVariation = () => {
-
+  const priceVariation = (product, variation) => {
+    product.price = variation.value;
+    product.description = variation.description;
+    handlenOrder(product);
   };
+  const modalSubProducts = () => {
+    console.log(modalProducts);
+    modalProducts ? setModalProducts(false) : setModalProducts(true);
+  };
+
   const CancelOrden = () => {
     // eslint-disable-next-line array-callback-return
     products.map((item) => {
@@ -126,20 +134,23 @@ const posLayout = (props) => {
                     name={item.name}
                     type={item.type}
                     description={item.description}
-                    onClick={() => handlenOrder(item)}
+                    onClick={() => modalSubProducts()}
                   />
-                  <Modal viewModal='true' title={item.name}>
-                    {item.prices.map((sizeProducts) => (
-                      <PosOrderIteam
-                        key={item._id}
-                        img={urlImgProduct + item._id}
-                        name={sizeProducts.description}
-                        cant={item.amount}
-                        price={(sizeProducts.value * item.tax) + sizeProducts.value}
-                        type={item.type}
-                      />
-                    ))}
-                  </Modal>
+                  {modalProducts && (
+                    <Modal title={item.name} onClick={() => modalSubProducts()}>
+                      {item.prices.map((sizeProducts) => (
+                        <PosOrderIteam
+                          key={item._id}
+                          img={urlImgProduct + item._id}
+                          name={sizeProducts.description}
+                          cant={item.amount}
+                          price={(sizeProducts.value * item.tax) + sizeProducts.value}
+                          type={item.type}
+                          onClick={() => priceVariation(item, sizeProducts)}
+                        />
+                      ))}
+                    </Modal>
+                  )}
                 </div>
               )
             ))
