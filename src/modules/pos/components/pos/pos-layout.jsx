@@ -48,6 +48,7 @@ const posLayout = (props) => {
     }
   };
   const priceVariation = (product, variation) => {
+    product._id = variation._id;
     product.price = variation.value;
     product.description = variation.description;
     handlenOrder(product);

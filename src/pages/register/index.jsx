@@ -29,6 +29,8 @@ const Register = (props) => {
   const handlSubmit = (event) => {
     if (form.password === form.password2) {
       event.preventDefault();
+      delete form.password2;
+      form.termsConditions = true;
       props.fetchRegister(form, props.history);
     } else {
       alert('Las contraseñas no son iguales intenta de nuevo');
@@ -144,7 +146,7 @@ const Register = (props) => {
               </div>
               <div className='Register__container__form__accion col-12'>
                 <div className='Register__container__form__accion__acepto'>
-                  <input type='checkbox' placeholder='Acepto' name='termsConditions' required />
+                  <input type='checkbox' placeholder='Acepto' onChange={handleInput} name='termsConditions' required />
                   <small>Estoy de acuerdo con los </small>
                   <Link to='/' className='Register__container__form__accion__link'>
                     <small>términos y condiciones</small>
