@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "pos",
+    "name": "pos-frontend",
     "alias": "dexpress.app",
     "builds": [
         {
