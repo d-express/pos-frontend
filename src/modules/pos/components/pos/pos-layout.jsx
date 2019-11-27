@@ -37,6 +37,7 @@ const posLayout = (props) => {
   const [inicialState, setInicialState] = useState(getData);
   const [data, setData] = useState(state1);
   const [modalProducts, setModalProducts] = useState(false);
+  const [PayModal, setPayModal] = useState(false);
   const [group, setGroup] = useState({ id: 0, name: 'Grupo de productos', });
   const handlenOrder = (product) => {
     if (product.amount) {
@@ -54,10 +55,11 @@ const posLayout = (props) => {
     handlenOrder(product);
   };
   const modalSubProducts = () => {
-    console.log(modalProducts);
     modalProducts ? setModalProducts(false) : setModalProducts(true);
   };
-
+  const modalPay = () => {
+    PayModal ? setPayModal(false) : setPayModal(true);
+  };
   const CancelOrden = () => {
     // eslint-disable-next-line array-callback-return
     products.map((item) => {
@@ -67,16 +69,14 @@ const posLayout = (props) => {
     });
     cancelCard();
   };
-
   const ConfirmOrder = () => {
     setData({
       ...data,
       historyTransaccion: [...data.historyTransaccion, data.cart],
     });
-    console.log(data.historyTransaccion);
     CancelOrden();
+    modalPay();
   };
-
   const selectProducts = (id, name) => {
     fetchProductsCategory(id);
     setGroup({
@@ -84,7 +84,6 @@ const posLayout = (props) => {
       name,
     });
   };
-
   const backProducts = () => {
     setGroup({
       id: 0,
@@ -94,6 +93,14 @@ const posLayout = (props) => {
 
   return (
     <section className='PosLaoyout'>
+      {PayModal && (
+        <Modal title='Modalidad de Pago' onClick={() => modalPay()}>
+          <div className='w-75'>
+            <button type='button' className='btn btn-warning btn-lg btn-block' onClick={() => ConfirmOrder()}>Efectivo</button>
+            <button type='button' className='btn btn-success btn-lg btn-block' onClick={() => ConfirmOrder()}>Tarjeta</button>
+          </div>
+        </Modal>
+      )}
       <div className='PosLaoyout__header'>
         <Header />
       </div>
@@ -163,7 +170,7 @@ const posLayout = (props) => {
           subTotal={subtotal}
           tax={tax}
           btnCancel={() => CancelOrden()}
-          btnPay={ConfirmOrder}
+          btnPay={() => modalPay()}
         >
           {cart.map((item) => (
             <PosOrderIteam
