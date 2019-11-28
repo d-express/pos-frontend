@@ -8,14 +8,14 @@ const getProductsCategory = (products) => ({
   products,
 });
 
-const addCard = (product) => ({
+const addCard = (itemCart) => ({
   type: 'ADD_CART',
-  product,
+  itemCart,
 });
 
-const updateCard = (product) => ({
+const updateCard = (itemCart) => ({
   type: 'UPDATE_CART',
-  product,
+  itemCart,
 });
 
 const payCard = (cart) => ({

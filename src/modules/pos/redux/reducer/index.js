@@ -21,16 +21,16 @@ const Pos = (state = INIT_STATE, action) => {
     case 'ADD_CART':
       return {
         ...state,
-        cart: [...state.cart, action.product],
-        subtotal: state.subtotal + action.product.price,
-        tax: state.tax + (action.product.price * action.product.tax),
+        cart: [...state.cart, action.itemCart],
+        subtotal: state.subtotal + action.itemCart.price,
+        tax: state.tax + (action.itemCart.price * action.itemCart.tax),
       };
     case 'UPDATE_CART':
       return {
         ...state,
         cart: [...state.cart],
-        subtotal: state.subtotal + action.product.price,
-        tax: state.tax + (action.product.price * action.product.tax),
+        subtotal: state.subtotal + action.itemCart.price,
+        tax: state.tax + (action.itemCart.price * action.itemCart.tax),
       };
     case 'CANCEL_CART':
       return {

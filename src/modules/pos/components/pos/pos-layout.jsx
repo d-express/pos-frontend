@@ -40,6 +40,7 @@ const posLayout = (props) => {
   const [PayModal, setPayModal] = useState(false);
   const [group, setGroup] = useState({ id: 0, name: 'Grupo de productos', });
   const handlenOrder = (product) => {
+
     if (product.amount) {
       product.amount += 1;
       updateCard(product);
@@ -48,11 +49,20 @@ const posLayout = (props) => {
       addCard(product);
     }
   };
+  const productCart = (item) => {
+    item.imgId = item._id;
+    console.log(item)
+    handlenOrder(item);
+  };
+
   const priceVariation = (product, variation) => {
-    product._id = variation._id;
-    product.price = variation.value;
-    product.description = variation.description;
-    handlenOrder(product);
+    console.log(product)
+    const item = Object.create(product);
+    item._id = variation._id;
+    item.imgId = product._id;
+    item.price = variation.value;
+    item.description = variation.description;
+    handlenOrder(item);
   };
   const modalSubProducts = () => {
     modalProducts ? setModalProducts(false) : setModalProducts(true);
@@ -123,8 +133,9 @@ const posLayout = (props) => {
               </div>
             </div>
           ) : (
+
             products.map((item) => (
-              item.price ? (
+              item.prices.length === 0 ? (
                 <PosProductsItem
                   key={item._id}
                   img={urlImgProduct + item._id}
@@ -132,10 +143,10 @@ const posLayout = (props) => {
                   type={item.type}
                   description={item.description}
                   price={item.price + (item.price * item.tax)}
-                  onClick={() => handlenOrder(item)}
+                  onClick={() => productCart(item)}
                 />
               ) : (
-                <div className='w-100'>
+                <div className='w-100' key={item._id}>
                   <PosProductsItem
                     key={item._id}
                     img={urlImgProduct + item._id}
@@ -148,7 +159,7 @@ const posLayout = (props) => {
                     <Modal title={item.name} onClick={() => modalSubProducts()}>
                       {item.prices.map((sizeProducts) => (
                         <PosOrderIteam
-                          key={item._id}
+                          key={sizeProducts._id}
                           img={urlImgProduct + item._id}
                           name={sizeProducts.description}
                           cant={item.amount}
@@ -175,7 +186,7 @@ const posLayout = (props) => {
           {cart.map((item) => (
             <PosOrderIteam
               key={item._id}
-              img={urlImgProduct + item._id}
+              img={urlImgProduct + item.imgId}
               name={item.name}
               cant={item.amount}
               price={item.price * item.amount}
