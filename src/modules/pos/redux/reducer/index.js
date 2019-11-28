@@ -26,6 +26,11 @@ const Pos = (state = INIT_STATE, action) => {
         tax: state.tax + (action.itemCart.price * action.itemCart.tax),
       };
     case 'UPDATE_CART':
+      state.cart.map((i) => {
+        if (i._id === action.itemCart._id) {
+          i.amount = action.itemCart.amount;
+        }
+      });
       return {
         ...state,
         cart: [...state.cart],

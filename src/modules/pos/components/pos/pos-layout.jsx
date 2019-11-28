@@ -40,9 +40,8 @@ const posLayout = (props) => {
   const [PayModal, setPayModal] = useState(false);
   const [group, setGroup] = useState({ id: 0, name: 'Grupo de productos', });
   const handlenOrder = (product) => {
-
     if (product.amount) {
-      product.amount += 1;
+      product.amount++;
       updateCard(product);
     } else {
       product.amount = 1;
@@ -51,17 +50,21 @@ const posLayout = (props) => {
   };
   const productCart = (item) => {
     item.imgId = item._id;
-    console.log(item)
+    console.log(item);
     handlenOrder(item);
   };
 
   const priceVariation = (product, variation) => {
-    console.log(product)
-    const item = Object.create(product);
+    const item = { ...product, };
     item._id = variation._id;
     item.imgId = product._id;
     item.price = variation.value;
     item.description = variation.description;
+    props.cart.map((i) => {
+      if (i._id === item._id) {
+        item.amount = i.amount;
+      }
+    });
     handlenOrder(item);
   };
   const modalSubProducts = () => {
